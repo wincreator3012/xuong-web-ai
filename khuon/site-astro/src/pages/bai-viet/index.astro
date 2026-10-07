@@ -1,0 +1,18 @@
+---
+import Nen from '../../layouts/Nen.astro';
+import { getCollection } from 'astro:content';
+const ds = (await getCollection('bai-viet', ({ data }) => !data.nhap)).sort((a, b) => b.data.ngay.valueOf() - a.data.ngay.valueOf());
+const ngay = (d: Date) => d.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' });
+---
+<Nen tieuDe="Bài viết | {{TEN}}" moTa="[[Một câu: các bài viết về chủ đề gì.]]">
+  <section class="phan">
+    <div class="khung">
+      <div class="cot-van"><h1>Bài viết</h1></div>
+      <ul class="luoi ds-tron">
+        {ds.map((b) => (
+          <li><a class="the" href={`/bai-viet/${b.id}/`}><span class="dau-goi">{ngay(b.data.ngay)}</span><h2>{b.data.tieuDe}</h2><p>{b.data.moTa}</p></a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Nen>

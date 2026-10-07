@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SỬA Ở ĐÂY: tiêu đề tab và mô tả; Google, Zalo, Facebook hiện đúng hai dòng này -->
+<title>{{TEN_NGUOI}} | {{CHUC_DANH}}</title>
+<meta name="description" content="[[Một câu: bạn là ai, làm việc với ai, về điều gì.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="{{TEN}}">
+<meta property="og:title" content="{{TEN_NGUOI}}">
+<meta property="og:description" content="[[Một câu: bạn là ai, làm việc với ai, về điều gì.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<script src="assets/js/nen.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "{{TEN_NGUOI}}",
+    "jobTitle": "{{CHUC_DANH}}",
+    "url": "{{URL}}",
+    "sameAs": ["[[https://www.facebook.com/...]]", "[[https://www.linkedin.com/in/...]]"]
+  }
+}
+</script>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+
+<!-- trang hồ sơ có điều hướng: tối đa 6 mục -->
+<header class="dau-trang co-menu">
+  <div class="khung">
+    <a class="ten-web" href="#">{{LOGO_DAU}}</a>
+    <button class="mo-menu nut nut--phu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="dieu-huong" id="menu" aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#triet-ly">Cách tôi làm việc</a></li>
+        <li><a href="#cua">Làm việc cùng tôi</a></li>
+        <li><a href="#dang-dien-ra">Đang diễn ra</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="noi-dung">
+  <!-- 1. mở đầu: danh xưng + một câu triết lý; được phép nền tối -->
+  <section class="hero phan--toi">
+    <div class="khung hai-cot">
+      <div>
+        <span class="nhan-muc">{{CHUC_DANH}}</span>
+        <h1>{{TEN_NGUOI}}</h1>
+        <p class="dan">[[Một câu triết lý nghề của bạn, viết bằng giọng của chính bạn, không khẩu hiệu.]]</p>
+        <div class="cum-nut">
+          <a class="nut" href="#cua">Xem cách làm việc cùng tôi</a>
+        </div>
+      </div>
+      <!-- SỬA Ở ĐÂY: chân dung thật, tông ấm, 1200x1500, WebP -->
+      <div class="hero-anh"><div class="cho-anh" style="--ti-le: 4 / 5">Chân dung thật, 1200 x 1500</div></div>
+    </div>
+  </section>
+
+  <!-- 2. ba cửa theo đối tượng: số cửa theo thực tế (2, 3, 4) -->
+  <section class="phan" id="cua">
+    <div class="khung">
+      <div class="cot-van hien">
+        <span class="nhan-muc">Làm việc cùng tôi</span>
+        <h2>[[Bạn đến đây với tư cách nào?]]</h2>
+      </div>
+      <div class="luoi luoi--3 hien">
+        <a class="the" href="#lien-he"><h3>[[Cá nhân]]</h3><p>[[Một câu: bạn giúp người này điều gì, bằng hình thức nào.]]</p></a>
+        <a class="the" href="#lien-he"><h3>[[Tổ chức]]</h3><p>[[Một câu.]]</p></a>
+        <a class="the" href="#lien-he"><h3>[[Trường học]]</h3><p>[[Một câu.]]</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. triết lý nén: văn xuôi hoặc vài khối chữ; bằng chứng học thuật đặt một cú bấm phía sau -->
+  <section class="phan phan--phu" id="triet-ly">
+    <div class="khung hai-cot hai-cot--lech">
+      <div class="hien">
+        <span class="nhan-muc">Cách tôi làm việc</span>
+        <h2>[[Nền tảng của bạn, gọi đúng tên]]</h2>
+      </div>
+      <div class="hien">
+        <p>[[Đoạn 1: điều bạn tin về con người, học tập, thay đổi; ghi tên tác giả các mô hình bạn dựa vào.]]</p>
+        <p>[[Đoạn 2: điều đó hiện ra thế nào trong một buổi làm việc cụ thể.]]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. số liệu thật, có nguồn kiểm chứng được -->
+  <section class="phan phan--sat">
+    <div class="khung">
+      <div class="so-lieu hien">
+        <p><b>[[20+]]</b><span>[[năm làm nghề]]</span></p>
+        <p><b>[[000]]</b><span>[[người đã học]]</span></p>
+        <p><b>[[00]]</b><span>[[tổ chức đã cộng tác]]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. đang diễn ra: tối đa 3 khối -->
+  <section class="phan phan--phu" id="dang-dien-ra">
+    <div class="khung">
+      <div class="cot-van hien"><span class="nhan-muc">Đang diễn ra</span><h2>[[Sách mới, khoá sắp mở, bài viết gần đây]]</h2></div>
+      <div class="luoi luoi--3 hien">
+        <a class="the" href="[[link]]"><span class="dau-goi">[[Khoá học]]</span><h3>[[Tên]]</h3><p>[[Một câu, ngày cụ thể.]]</p></a>
+        <a class="the" href="[[link]]"><span class="dau-goi">[[Bài viết]]</span><h3>[[Tên]]</h3><p>[[Một câu.]]</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. cảm nhận chọn lọc: lời có hình ảnh, tên đầy đủ, vai trò thật -->
+  <section class="phan">
+    <div class="khung cot-van hien">
+      <figure class="cam-nhan">
+        <blockquote><p class="trich">[[Một lời nhận xét có hình ảnh cụ thể.]]</p></blockquote>
+        <figcaption><b>[[Họ tên đầy đủ]]</b>[[Vai trò, tổ chức]]</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 7. bản tin làm lời mời trung tâm: dẫn sang nơi bạn đã viết (Substack...), không tự dựng danh sách email -->
+  <section class="phan phan--toi">
+    <div class="khung cot-van giua hien">
+      <h2>[[Thư bạn gửi đều đặn: tên bản tin]]</h2>
+      <p class="dan">[[Một câu: thư nói về điều gì, bao lâu một lần.]]</p>
+      <div class="cum-nut"><a class="nut" href="[[https://ten.substack.com]]">Đọc và nhận thư</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <p class="dinh-vi">{{LOGO_CHAN}}</p>
+    <div class="luoi luoi--3">
+      <div><p><b>{{TEN_NGUOI}}</b></p><p>{{CHUC_DANH}}</p></div>
+      <div><p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p><p>{{DIEN_THOAI}}</p><p><a href="{{ZALO_LINK}}">Nhắn Zalo</a></p></div>
+      <div><p><a href="[[https://www.facebook.com/...]]">Facebook</a></p><p><a href="[[https://www.linkedin.com/in/...]]">LinkedIn</a></p></div>
+    </div>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{CHU_QUAN}}</p>
+  </div>
+</footer>
+</body>
+</html>

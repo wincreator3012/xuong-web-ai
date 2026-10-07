@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TIEU_DE}} | {{TEN}}</title>
+<meta name="description" content="[[Ứng dụng giúp ai làm việc gì. Đăng nhập bằng Google, dữ liệu của bạn chỉ bạn xem được.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="{{TIEU_DE}}">
+<meta property="og:description" content="[[Ứng dụng giúp ai làm việc gì.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<script src="assets/js/nen.js" defer></script>
+<script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+<header class="dau-trang">
+  <div class="khung">
+    <a class="ten-web" href="./">{{LOGO_DAU}}</a>
+    <div class="cum-nut cum-nut--sat">
+      <span class="phu nho" id="ten-nguoi" hidden></span>
+      <button class="nut nut--phu" type="button" id="nut-thoat" hidden>Đăng xuất</button>
+    </div>
+  </div>
+</header>
+
+<main id="noi-dung" class="phan phan--sat">
+  <div class="khung">
+    <!-- cảnh báo trình duyệt nhúng: Google chặn đăng nhập trong Zalo, Facebook, Messenger (lỗi disallowed_useragent) -->
+    <div class="luu-y" id="canh-bao-nhung" hidden>
+      <p><b>Bạn đang mở trang trong ứng dụng Zalo hoặc Facebook.</b> Google không cho đăng nhập ở đây. Bấm dấu ba chấm ở góc màn hình, chọn "Mở bằng trình duyệt" (Chrome, Safari), rồi đăng nhập.</p>
+      <p><button class="chep" type="button" data-chep="#dia-chi-trang">Chép địa chỉ trang</button> <span id="dia-chi-trang" class="nho"></span></p>
+    </div>
+
+    <section id="chua-dang-nhap" class="cot-van">
+      <h1>{{TIEU_DE}}</h1>
+      <p class="dan">[[Hai câu: ứng dụng giúp bạn làm gì; dữ liệu của bạn được bảo vệ ra sao.]]</p>
+      <div class="cum-nut"><button class="nut" type="button" id="nut-dang-nhap" disabled>Đăng nhập bằng Google</button></div>
+      <p class="trang-thai" id="trang-thai-dang-nhap" role="status"></p>
+      <p class="phu nho">Khi đăng nhập, bạn đồng ý để {{TEN}} lưu tên, email và các ghi chép bạn tạo, theo <a href="chinh-sach-bao-mat.html">chính sách bảo vệ dữ liệu</a>. Bạn xoá được mọi ghi chép của mình bất cứ lúc nào.</p>
+    </section>
+
+    <section id="da-dang-nhap" hidden>
+      <div class="hai-cot hai-cot--tren">
+        <div>
+          <h2>Thêm ghi chép</h2>
+          <form class="bieu-mau" id="form-ghi">
+            <div class="o"><label for="ngay">Ngày</label><input id="ngay" name="ngay" type="date" required></div>
+            <div class="o"><label for="noi-dung-ghi">Nội dung</label><textarea id="noi-dung-ghi" name="noiDung" maxlength="2000" required></textarea></div>
+            <button class="nut" type="submit">Lưu ghi chép</button>
+            <p class="trang-thai" id="trang-thai-ghi" role="status"></p>
+          </form>
+        </div>
+        <div>
+          <h2>Ghi chép của tôi</h2>
+          <ul class="ds-tron luoi" id="ds-cua-toi"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- chỉ hiện với quản trị (email có trong bộ sưu tập quanTri); luật Firestore mới là lớp chặn thật, giao diện chỉ ẩn hiện -->
+    <section id="quan-tri" class="phan" hidden>
+      <h2>Quản trị</h2>
+      <p class="phu" id="dem-tat-ca"></p>
+      <div class="cum-nut"><button class="nut nut--phu" type="button" id="nut-xuat">Tải CSV toàn bộ ghi chép</button></div>
+    </section>
+  </div>
+</main>
+
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <div class="luoi luoi--2">
+      <div><p><b>{{CHU_QUAN}}</b></p><p><a href="chinh-sach-bao-mat.html">Chính sách bảo vệ dữ liệu</a></p></div>
+      <div><p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p><p>{{DIEN_THOAI}}</p></div>
+    </div>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{TEN}}</p>
+  </div>
+</footer>
+</body>
+</html>

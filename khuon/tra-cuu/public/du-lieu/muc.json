@@ -1,0 +1,8 @@
+{
+  "_huong-dan": "Mỗi mục một đối tượng. id: không dấu, gạch nối, không trùng (dùng làm địa chỉ #id). nhom: tên nhóm hiện ở bộ lọc. noiDung: các đoạn cách nhau bằng một dòng trống (\\n\\n). nguon: trích dẫn APA 7, DOI là link thật. Dữ liệu dưới đây là MẪU: thay toàn bộ bằng dữ liệu thật trước khi đưa lên mạng.",
+  "muc": [
+    {"id": "mau-thu-mot", "ten": "[[Tên mục mẫu thứ nhất]]", "nhom": "[[Nhóm A]]", "tomTat": "[[Một câu tóm tắt mục này giúp người đọc làm gì.]]", "noiDung": "[[Đoạn thứ nhất.]]\n\n[[Đoạn thứ hai.]]", "nguon": "[[Tác giả, A. (Năm). Tên công trình. Nhà xuất bản. https://doi.org/...]]", "tuKhoa": ["mẫu"]},
+    {"id": "mau-thu-hai", "ten": "[[Tên mục mẫu thứ hai]]", "nhom": "[[Nhóm A]]", "tomTat": "[[Tóm tắt.]]", "noiDung": "[[Nội dung.]]", "nguon": "", "tuKhoa": []},
+    {"id": "mau-thu-ba", "ten": "[[Tên mục mẫu thứ ba]]", "nhom": "[[Nhóm B]]", "tomTat": "[[Tóm tắt.]]", "noiDung": "[[Nội dung.]]", "nguon": "", "tuKhoa": []}
+  ]
+}

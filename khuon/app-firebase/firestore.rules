@@ -1,0 +1,48 @@
+rules_version = '2';
+// LUẬT BẢO VỆ DỮ LIỆU: viết và kiểm TRƯỚC khi viết giao diện (chuan/06-du-lieu-bao-mat.md).
+// Nguyên tắc: mặc định cấm hết; mỗi bộ sưu tập mở đúng phần cần, cho đúng người; kiểm dữ liệu ghi vào.
+// Không bao giờ: "allow read, write: if true", "match /{document=**}", hay chỉ "request.auth != null".
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function daDangNhap() { return request.auth != null; }
+    function laChu(uid) { return daDangNhap() && request.auth.uid == uid; }
+    // Quản trị: email đã xác minh và có tài liệu quanTri/<email> (tạo tay trong Firebase Console, không viết email vào mã)
+    function laQuanTri() {
+      return daDangNhap() && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/quanTri/$(request.auth.token.email));
+    }
+
+    // hồ sơ người dùng: mỗi người chỉ đọc, ghi hồ sơ của chính mình
+    match /nguoiDung/{uid} {
+      allow read: if laChu(uid) || laQuanTri();
+      allow create, update: if laChu(uid)
+        && request.resource.data.keys().hasOnly(['ten', 'email', 'capNhat'])
+        && request.resource.data.ten is string && request.resource.data.ten.size() <= 80
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.capNhat == request.time;
+      allow delete: if laChu(uid);
+    }
+
+    // ghi chép: chủ sở hữu đọc, sửa, xoá của mình; quản trị đọc tất cả (để xuất báo cáo)
+    match /ghiChep/{id} {
+      allow read: if daDangNhap() && (resource.data.uid == request.auth.uid || laQuanTri());
+      allow create: if daDangNhap()
+        && request.resource.data.keys().hasOnly(['uid', 'noiDung', 'ngay', 'taoLuc'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.noiDung is string && request.resource.data.noiDung.size() > 0 && request.resource.data.noiDung.size() <= 2000
+        && request.resource.data.ngay is string && request.resource.data.ngay.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.taoLuc == request.time;
+      allow update: if daDangNhap() && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['noiDung'])
+        && request.resource.data.noiDung is string && request.resource.data.noiDung.size() <= 2000;
+      allow delete: if daDangNhap() && resource.data.uid == request.auth.uid;
+    }
+
+    // danh sách quản trị: chỉ quản trị đọc được; không ai ghi được từ ứng dụng
+    match /quanTri/{email} {
+      allow read: if laQuanTri();
+      allow write: if false;
+    }
+  }
+}

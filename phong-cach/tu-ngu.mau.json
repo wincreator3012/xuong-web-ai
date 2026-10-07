@@ -1,0 +1,11 @@
+{
+  "_huong-dan": "BẢN KHỞI ĐẦU. Bước cài chép tệp này thành phong-cach/tu-ngu.json: luật chữ RIÊNG của bạn cho bước kiểm chữ của tools/kiem-web.py (đi cùng phong-cach/PHONG-CACH.md mục 4). tuCam: luôn sai, báo LỖI. tuNenTranh: nên tránh, báo GỢI Ý để cân nhắc theo ngữ cảnh. 'mau' là biểu thức chính quy (không phân biệt hoa thường), \\b là ranh giới từ. Luật chung cho mọi người (gạch dài, ba chấm Unicode, khung đua tranh, nêu số ghế, sáo ngữ văn AI) đã có trong tools/chung.py, không cần chép vào đây. Mỗi khi bạn nói 'đừng bao giờ dùng từ X', trợ lý thêm một mục vào tuCam.",
+  "_viDu": [
+    {
+      "mau": "\\bkhách hàng thân yêu\\b",
+      "lyDo": "bạn không dùng cách gọi này; viết \"bạn\" hoặc \"anh chị\""
+    }
+  ],
+  "tuCam": [],
+  "tuNenTranh": []
+}

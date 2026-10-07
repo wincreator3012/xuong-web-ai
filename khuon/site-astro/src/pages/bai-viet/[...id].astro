@@ -1,0 +1,20 @@
+---
+import Nen from '../../layouts/Nen.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const ds = await getCollection('bai-viet', ({ data }) => !data.nhap);
+  return ds.map((b) => ({ params: { id: b.id }, props: { b } }));
+}
+const { b } = Astro.props;
+const { Content } = await render(b);
+---
+<Nen tieuDe={`${b.data.tieuDe} | {{TEN}}`} moTa={b.data.moTa} loai="article">
+  <article class="phan">
+    <div class="khung cot-van">
+      <span class="nhan-muc">{b.data.ngay.toLocaleDateString('vi-VN')}</span>
+      <h1>{b.data.tieuDe}</h1>
+      <Content />
+      <p class="cum-nut"><a class="nut nut--phu" href="/bai-viet/">Các bài khác</a></p>
+    </div>
+  </article>
+</Nen>

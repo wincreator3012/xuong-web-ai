@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TIEU_DE}} | {{TEN}}</title>
+<meta name="description" content="[[Bài tự soi chiếu ngắn: mất bao lâu, giúp bạn nhìn ra điều gì. Kết quả chỉ hiện trên máy bạn.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="{{TEN}}">
+<meta property="og:title" content="{{TIEU_DE}}">
+<meta property="og:description" content="[[Bài tự soi chiếu ngắn, kết quả chỉ hiện trên máy bạn.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<style>
+  .tien-do { height: 6px; background: var(--nen-phu); border-radius: 3px; overflow: hidden; margin-bottom: var(--kc-3); }
+  .tien-do span { display: block; height: 100%; width: 0; background: var(--nhan); transition: width var(--chuyen); }
+  .cau { border: 0; padding: 0; margin: 0 0 var(--kc-4); }
+  .cau legend { font-family: var(--phong-tieu-de), Georgia, serif; font-size: var(--co-h3); line-height: var(--dong-tieu-de); margin-bottom: var(--kc-2); }
+  .thang { display: grid; gap: var(--kc-1); }
+  .thang label { display: flex; gap: 0.75rem; align-items: center; min-height: 3rem; padding: 0.5rem 0.9rem; border: 1px solid var(--vien-o); border-radius: var(--bo); cursor: pointer; }
+  .thang input { width: 1.2rem; height: 1.2rem; accent-color: var(--nhan); }
+  .thang label:has(input:checked) { border-color: var(--lien-ket); outline: 1px solid var(--lien-ket); }
+  .chieu { margin-bottom: var(--kc-3); }
+  .chieu .thanh { height: 10px; background: var(--nen-phu); border-radius: 5px; overflow: hidden; }
+  .chieu .thanh span { display: block; height: 100%; background: var(--cau-truc); }
+</style>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+<header class="dau-trang">
+  <div class="khung"><a class="ten-web" href="./">{{LOGO_DAU}}</a></div>
+</header>
+<main id="noi-dung" class="phan phan--sat">
+  <div class="khung cot-van">
+    <section id="mo-dau">
+      <span class="nhan-muc">Tự soi chiếu, khoảng [[5]] phút</span>
+      <h1>{{TIEU_DE}}</h1>
+      <p class="dan">[[Bài này giúp bạn nhìn ra điều gì. Nói rõ đây là công cụ tự soi chiếu, không phải chẩn đoán.]]</p>
+      <!-- ghi công: thang đo, bảng hỏi của người khác phải ghi tên tác giả và nguồn; được phép dùng mới đưa lên -->
+      <p class="phu nho">[[Dựa trên thang đo của Tác giả (năm), bản Việt hoá của ...; hoặc: câu hỏi do {{TEN_NGUOI}} biên soạn.]]
+        Câu trả lời và kết quả chỉ nằm trên máy của bạn, không gửi đi đâu.</p>
+      <noscript><p class="luu-y">Bài này cần JavaScript để tính điểm.</p></noscript>
+    </section>
+    <form id="bai" hidden>
+      <div class="tien-do" aria-hidden="true"><span id="thanh-tien-do"></span></div>
+      <p class="phu nho" id="vi-tri" aria-live="polite"></p>
+      <div id="cac-cau"></div>
+      <div class="cum-nut"><button class="nut" type="submit">Xem kết quả</button></div>
+      <p class="trang-thai" id="nhac" data-loai="loi" role="status"></p>
+    </form>
+    <section id="ket-qua" hidden tabindex="-1">
+      <span class="nhan-muc">Kết quả của bạn</span>
+      <h2>[[Điều kết quả này gợi ý]]</h2>
+      <div id="cac-chieu"></div>
+      <div id="dien-giai"></div>
+      <p class="luu-y">[[Lời nhắc: kết quả phản ánh lúc này, không phải nhãn cố định. Khi nào nên tìm người đồng hành chuyên môn.]]</p>
+      <div class="cum-nut"><a class="nut" href="[[link bước tiếp theo]]">[[Bước tiếp theo phù hợp]]</a><button class="nut nut--chu" type="button" id="lam-lai">Làm lại</button></div>
+    </section>
+  </div>
+</main>
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <p><b>{{CHU_QUAN}}</b></p>
+    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{TEN}}</p>
+  </div>
+</footer>
+<script src="assets/js/nen.js" defer></script>
+<script src="assets/js/trac-nghiem.js" defer></script>
+</body>
+</html>

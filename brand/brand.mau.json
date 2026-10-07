@@ -1,0 +1,233 @@
+{
+  "_huong-dan": "BẢN KHỞI ĐẦU. Bước cài (tools/cai-dat.py) chép tệp này thành brand/brand.json, rồi skill web-thiet-lap điền theo người dùng; luôn sửa brand.json, không sửa bản .mau này. Ba phần: 'chuDe' (bộ màu và phông theo VAI: nen, chu, nhan, lienKet, toi...; he-thong/nen.css chỉ gọi vai nên đổi chủ đề là đổi cả web), 'thuongHieu' (logo, chủ đề mặc định, liên hệ của từng thương hiệu; logo nằm ở brand/logo/), 'nhanVat' (tên, học vị, chức danh nguyên văn). Giá trị còn trong ngoặc vuông [...] là chỗ chưa điền: web tạo ra hiện [[...]] ở đó và tools/kiem-web.py --len chặn đưa lên mạng. Mọi chủ đề phải qua tools/tuong-phan.py.",
+  "cap-nhat": "2026-10-07",
+  "thuongHieuMacDinh": "chinh",
+  "chuDe": {
+    "giay-muc": {
+      "ten": "Giấy ngà và mực",
+      "khiNao": "điềm tĩnh, sâu: hồ sơ chuyên gia, trang tri thức, thư viện tra cứu, workbook trực tuyến; lựa chọn an toàn khi chưa biết chọn gì",
+      "toi": false,
+      "mau": {
+        "nen": "#FAF7F1",
+        "nenPhu": "#F1ECE2",
+        "nenO": "#FFFFFF",
+        "chu": "#23282D",
+        "chuPhu": "#5C6168",
+        "nhan": "#2F5D50",
+        "nhanDam": "#244A40",
+        "nhanChu": "#FAF7F1",
+        "lienKet": "#2F5D50",
+        "cauTruc": "#23282D",
+        "vien": "#D8D2C6",
+        "vienO": "#6E6A60",
+        "loi": "#A23A2C",
+        "toiNen": "#15181C",
+        "toiNenPhu": "#1E2227",
+        "toiChu": "#F2EEE5",
+        "toiChuPhu": "#B4B8BD",
+        "toiNhan": "#C7A97B",
+        "toiNhanChu": "#15181C",
+        "vang": "#C7A97B"
+      },
+      "phong": {
+        "tieuDe": "Lora",
+        "noiDung": "Be Vietnam Pro"
+      }
+    },
+    "than-dong": {
+      "ten": "Than và đồng ấm (cả trang tối)",
+      "khiNao": "trầm ấm: trang chiêm nghiệm, trích dẫn, sự kiện buổi tối; dùng có chủ đích vì web đọc dài thì nền sáng dễ đọc hơn",
+      "toi": true,
+      "mau": {
+        "nen": "#15181C",
+        "nenPhu": "#1E2227",
+        "nenO": "#1E2227",
+        "chu": "#F2EEE5",
+        "chuPhu": "#B4B8BD",
+        "nhan": "#C7A97B",
+        "nhanDam": "#E5CFA8",
+        "nhanChu": "#15181C",
+        "lienKet": "#D9BE90",
+        "cauTruc": "#E5CFA8",
+        "vien": "#3A3F45",
+        "vienO": "#8A9096",
+        "loi": "#F2998E",
+        "toiNen": "#0E1013",
+        "toiNenPhu": "#23272D",
+        "toiChu": "#F2EEE5",
+        "toiChuPhu": "#B4B8BD",
+        "toiNhan": "#C7A97B",
+        "toiNhanChu": "#15181C",
+        "vang": "#C7A97B"
+      },
+      "phong": {
+        "tieuDe": "Lora",
+        "noiDung": "Be Vietnam Pro"
+      }
+    },
+    "dem-vang": {
+      "ten": "Đêm xanh thẫm và vàng kim (cả trang tối)",
+      "khiNao": "sang trọng: trang đích chương trình cao cấp, sự kiện, lễ trao chứng nhận",
+      "toi": true,
+      "mau": {
+        "nen": "#0A1630",
+        "nenPhu": "#12224A",
+        "nenO": "#12224A",
+        "chu": "#FFFFFF",
+        "chuPhu": "#C9D2E3",
+        "nhan": "#D4AF68",
+        "nhanDam": "#F2E0B0",
+        "nhanChu": "#0E1730",
+        "lienKet": "#E4C57E",
+        "cauTruc": "#F2E0B0",
+        "vien": "#2A3F6E",
+        "vienO": "#8D9AB6",
+        "loi": "#FF9C8F",
+        "toiNen": "#050E24",
+        "toiNenPhu": "#0D1E46",
+        "toiChu": "#FFFFFF",
+        "toiChuPhu": "#C9D2E3",
+        "toiNhan": "#D4AF68",
+        "toiNhanChu": "#0E1730",
+        "vang": "#D4AF68"
+      },
+      "phong": {
+        "tieuDe": "Playfair Display",
+        "noiDung": "Be Vietnam Pro"
+      }
+    },
+    "dem-xanh": {
+      "ten": "Đêm xanh và xanh ngọc (cả trang tối)",
+      "khiNao": "rõ ràng, hiện đại: trang giải thích, hội thảo công nghệ, khoá học kỹ năng số",
+      "toi": true,
+      "mau": {
+        "nen": "#0E1A2B",
+        "nenPhu": "#15253B",
+        "nenO": "#15253B",
+        "chu": "#F1F5F9",
+        "chuPhu": "#B6C2D1",
+        "nhan": "#5CC8E8",
+        "nhanDam": "#A5E2F3",
+        "nhanChu": "#0E1A2B",
+        "lienKet": "#7FD4EE",
+        "cauTruc": "#C9E9F5",
+        "vien": "#2A3B55",
+        "vienO": "#8193AA",
+        "loi": "#FF9E92",
+        "toiNen": "#08111E",
+        "toiNenPhu": "#1A2B44",
+        "toiChu": "#F1F5F9",
+        "toiChuPhu": "#B6C2D1",
+        "toiNhan": "#5CC8E8",
+        "toiNhanChu": "#0E1A2B",
+        "vang": "#E8C77A"
+      },
+      "phong": {
+        "tieuDe": "Be Vietnam Pro",
+        "noiDung": "Be Vietnam Pro"
+      }
+    },
+    "am-ap": {
+      "ten": "Kem ấm và đất nung",
+      "khiNao": "gần gũi: phụ huynh, cộng đồng, chăm sóc, lớp học nhỏ, trang cá nhân thân thiện",
+      "toi": false,
+      "mau": {
+        "nen": "#FBF6EF",
+        "nenPhu": "#F3EADD",
+        "nenO": "#FFFFFF",
+        "chu": "#2A201A",
+        "chuPhu": "#625247",
+        "nhan": "#A8482A",
+        "nhanDam": "#8C3B22",
+        "nhanChu": "#FFFFFF",
+        "lienKet": "#9A4226",
+        "cauTruc": "#5B3A29",
+        "vien": "#E6D8C6",
+        "vienO": "#7A6A5C",
+        "loi": "#A3261B",
+        "toiNen": "#2A201A",
+        "toiNenPhu": "#3A2C23",
+        "toiChu": "#FBF6EF",
+        "toiChuPhu": "#D2C3B4",
+        "toiNhan": "#F0A47E",
+        "toiNhanChu": "#2A201A",
+        "vang": "#E9C483"
+      },
+      "phong": {
+        "tieuDe": "Lora",
+        "noiDung": "Be Vietnam Pro"
+      }
+    },
+    "trang-xanh": {
+      "ten": "Trắng và xanh dương",
+      "khiNao": "hiện đại, tin cậy: dịch vụ, báo giá doanh nghiệp, trang tổ chức",
+      "toi": false,
+      "mau": {
+        "nen": "#FFFFFF",
+        "nenPhu": "#F2F6FB",
+        "nenO": "#FFFFFF",
+        "chu": "#0F1E33",
+        "chuPhu": "#4B5A6E",
+        "nhan": "#1D5BD8",
+        "nhanDam": "#1748AD",
+        "nhanChu": "#FFFFFF",
+        "lienKet": "#1A52C4",
+        "cauTruc": "#0F1E33",
+        "vien": "#D9E2EE",
+        "vienO": "#66748A",
+        "loi": "#B3261E",
+        "toiNen": "#0F1E33",
+        "toiNenPhu": "#182C48",
+        "toiChu": "#FFFFFF",
+        "toiChuPhu": "#BAC6D8",
+        "toiNhan": "#8DB4FF",
+        "toiNhanChu": "#0F1E33",
+        "vang": "#7FD8B4"
+      },
+      "phong": {
+        "tieuDe": "Be Vietnam Pro",
+        "noiDung": "Be Vietnam Pro"
+      }
+    }
+  },
+  "thuongHieu": {
+    "chinh": {
+      "ten": "[Tên thương hiệu hoặc tên bạn]",
+      "nhanVat": "chinh",
+      "chuDeMacDinh": "giay-muc",
+      "chuDeHop": [
+        "giay-muc",
+        "am-ap",
+        "trang-xanh"
+      ],
+      "logo": {
+        "nenSang": "logo-mau-sang.png",
+        "nenToi": "logo-mau-toi.png",
+        "bieuTuongSang": "bieu-tuong-mau.png"
+      },
+      "khauHieu": "[Một dòng giới thiệu ngắn]",
+      "website": "[https://ten-mien-cua-ban]",
+      "ghiChu": "Logo hiện tại là logo MẪU của xưởng: thả logo thật vào brand/logo/ rồi sửa ba tên tệp ở trên (bước thiết lập làm việc này)."
+    }
+  },
+  "nhanVat": {
+    "chinh": {
+      "ten": "[Họ và tên]",
+      "hocVi": "[Học vị, ví dụ TS, ThS; không có thì để trống]",
+      "tenDayDu": "[Tên hiển thị kèm học vị, ví dụ TS Nguyễn Minh An]",
+      "chucDanh": {
+        "macDinh": "[Chức danh nguyên văn]"
+      },
+      "ghiChu": "Viết đúng nguyên văn người dùng đưa, không tự rút gọn. Có thêm bản chức danh (bản ngắn, bản dễ hiểu, bản tiếng Anh) thì thêm khoá vào chucDanh và ghi khi nào dùng ở phong-cach/PHONG-CACH.md mục 1."
+    }
+  },
+  "lienHe": {
+    "_ghiChu": "Liên hệ công khai ở chân trang. Nghị định 174/2026 phạt khi trang thông tin điện tử thiếu tên chủ quản, địa chỉ liên lạc, email, điện thoại (chuan/08-phap-ly-vn.md). Dòng còn [...] thì web để chỗ trống đánh dấu SỬA Ở ĐÂY.",
+    "chuQuan": "[Tên chủ quản: cá nhân hoặc tổ chức]",
+    "email": "[email công khai]",
+    "dienThoai": "[số điện thoại công khai]",
+    "zalo": "[số Zalo, dạng 09xxxxxxxx]",
+    "diaChi": "[địa chỉ liên lạc, có thể chỉ ghi thành phố]",
+    "website": "[https://ten-mien-cua-ban]"
+  }
+}

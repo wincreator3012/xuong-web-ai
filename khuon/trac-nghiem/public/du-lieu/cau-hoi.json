@@ -1,0 +1,25 @@
+{
+  "_huong-dan": "Bộ câu hỏi MẪU (không phải thang đo đã chuẩn hoá): thay bằng bộ thật, ghi nguồn ở trang. thang: các mức trả lời theo thứ tự điểm 1..n. chieu: mỗi chiều có tên và dienGiai (sắp tăng dần theo 'den' = điểm trung bình tối đa của mức). cauHoi: cau, chieu, dao=true nếu câu tính điểm đảo.",
+  "thang": [
+    {"diem": 1, "nhan": "Hầu như không"},
+    {"diem": 2, "nhan": "Thỉnh thoảng"},
+    {"diem": 3, "nhan": "Khá thường"},
+    {"diem": 4, "nhan": "Hầu như luôn luôn"}
+  ],
+  "chieu": {
+    "a": {"ten": "[[Chiều thứ nhất]]", "dienGiai": [
+      {"den": 2, "chu": "[[Diễn giải mức thấp: nói điều quan sát được, gợi một việc nhỏ có thể thử.]]"},
+      {"den": 3, "chu": "[[Diễn giải mức giữa.]]"},
+      {"den": 4, "chu": "[[Diễn giải mức cao.]]"}]},
+    "b": {"ten": "[[Chiều thứ hai]]", "dienGiai": [
+      {"den": 2, "chu": "[[Diễn giải mức thấp.]]"},
+      {"den": 3, "chu": "[[Diễn giải mức giữa.]]"},
+      {"den": 4, "chu": "[[Diễn giải mức cao.]]"}]}
+  },
+  "cauHoi": [
+    {"cau": "[[Câu hỏi 1 của chiều thứ nhất]]", "chieu": "a"},
+    {"cau": "[[Câu hỏi 2 của chiều thứ nhất]]", "chieu": "a", "dao": true},
+    {"cau": "[[Câu hỏi 1 của chiều thứ hai]]", "chieu": "b"},
+    {"cau": "[[Câu hỏi 2 của chiều thứ hai]]", "chieu": "b"}
+  ]
+}

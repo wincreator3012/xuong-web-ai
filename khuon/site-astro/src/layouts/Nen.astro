@@ -1,0 +1,60 @@
+---
+// Khung chung mọi trang: đầu trang có điều hướng, chân trang có chủ quản và liên hệ.
+// Màu, phông: public/assets/css/tokens.css; nền chung: public/assets/css/nen.css (không sửa).
+interface Props { tieuDe: string; moTa: string; loai?: string; }
+const { tieuDe, moTa, loai = 'website' } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site);
+const menu = [
+  { href: '/', ten: 'Trang chủ' },
+  { href: '/gioi-thieu/', ten: 'Giới thiệu' },
+  { href: '/bai-viet/', ten: 'Bài viết' },
+];
+const dangO = (h: string) => (h === '/' ? Astro.url.pathname === '/' : Astro.url.pathname.startsWith(h));
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{tieuDe}</title>
+<meta name="description" content={moTa}>
+<link rel="canonical" href={url}>
+<meta property="og:type" content={loai}>
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="{{TEN}}">
+<meta property="og:title" content={tieuDe}>
+<meta property="og:description" content={moTa}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content={new URL('/assets/img/chia-se.jpg', Astro.site)}>
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/nen.css">
+<link rel="stylesheet" href="/assets/css/trang.css">
+<script src="/assets/js/nen.js" defer></script>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+<header class="dau-trang co-menu">
+  <div class="khung">
+    <a class="ten-web" href="/">{{LOGO_DAU}}</a>
+    <button class="mo-menu nut nut--phu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="dieu-huong" id="menu" aria-label="Điều hướng chính">
+      <ul>{menu.map((m) => <li><a href={m.href} aria-current={dangO(m.href) ? 'page' : undefined}>{m.ten}</a></li>)}</ul>
+    </nav>
+  </div>
+</header>
+<main id="noi-dung"><slot /></main>
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <p class="dinh-vi">{{LOGO_CHAN}}</p>
+    <div class="luoi luoi--2">
+      <div><p><b>{{CHU_QUAN}}</b></p><p>Chịu trách nhiệm nội dung: {{TEN_NGUOI}}</p></div>
+      <div><p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p><p>{{DIEN_THOAI}}</p><p><a href="{{ZALO_LINK}}">Nhắn Zalo</a></p></div>
+    </div>
+    <p class="ban-quyen">© {new Date().getFullYear()} {{TEN}}</p>
+  </div>
+</footer>
+</body>
+</html>

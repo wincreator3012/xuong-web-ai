@@ -1,0 +1,5 @@
+{
+  "_huong-dan": "Bản khởi đầu: tools/cai-dat.py chép thành cau-hinh.json (không lên git) trên từng máy. Đường dẫn tương đối tính từ thư mục repo. thuMucDuAn: hồ sơ từng dự án web (brief, kế hoạch thiết kế, hồ sơ vận hành, báo cáo kiểm, ảnh chụp). thuMucWeb: mã nguồn từng web, mỗi web một thư mục (về sau là một kho git riêng nối GitHub và nơi lưu trữ). Muốn đặt dự án ở chỗ khác cho một phiên: nói ở đầu cuộc trò chuyện, trợ lý dùng --goc, --goc-web, không sửa tệp này.",
+  "thuMucDuAn": "../Du an",
+  "thuMucWeb": "../Web"
+}

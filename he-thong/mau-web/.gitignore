@@ -1,0 +1,24 @@
+# Không bao giờ đưa lên git: khoá bí mật, tài khoản dịch vụ, biến môi trường
+.env
+.env.*
+!.env.mau
+*.pem
+*serviceAccount*.json
+*service-account*.json
+*-admin-key*.json
+firebase-adminsdk*.json
+token.json
+credentials.json
+.dev.vars
+# sinh ra khi dựng, khi chạy
+node_modules/
+dist/
+.astro/
+.wrangler/
+.vercel/
+.netlify/
+.firebase/
+*.log
+# rác hệ thống
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+---
+import Nen from '../layouts/Nen.astro';
+import { getCollection } from 'astro:content';
+const moi = (await getCollection('bai-viet', ({ data }) => !data.nhap))
+  .sort((a, b) => b.data.ngay.valueOf() - a.data.ngay.valueOf()).slice(0, 3);
+const ngay = (d: Date) => d.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' });
+---
+<Nen tieuDe="{{TIEU_DE}} | {{TEN}}" moTa="[[Một câu: web này của ai, dành cho ai, có gì.]]">
+  <section class="hero">
+    <div class="khung cot-van">
+      <span class="nhan-muc">{{CHUC_DANH}}</span>
+      <h1>[[Tiêu đề nói thẳng điều người đọc tìm thấy ở đây]]</h1>
+      <p class="dan">[[Một đến hai câu mở rộng.]]</p>
+      <div class="cum-nut"><a class="nut" href="/gioi-thieu/">[[Hành động chính]]</a><a class="nut nut--chu" href="/bai-viet/">Đọc bài viết</a></div>
+    </div>
+  </section>
+  <section class="phan phan--phu">
+    <div class="khung">
+      <div class="cot-van"><span class="nhan-muc">Bài viết mới</span><h2>[[Gần đây tôi viết về]]</h2></div>
+      <div class="luoi luoi--3">
+        {moi.map((b) => (
+          <a class="the" href={`/bai-viet/${b.id}/`}>
+            <span class="dau-goi">{ngay(b.data.ngay)}</span>
+            <h3>{b.data.tieuDe}</h3>
+            <p>{b.data.moTa}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Nen>

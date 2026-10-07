@@ -1,0 +1,17 @@
+# Pages CMS (pagescms.org): người biên tập sửa bài trên giao diện web, được mời qua email, không cần tài khoản GitHub.
+# Cách bật: huong-dan/09-form-va-du-lieu.md mục "Cho người khác sửa nội dung".
+media:
+  input: public/assets/img
+  output: /assets/img
+content:
+  - name: bai-viet
+    label: Bài viết
+    type: collection
+    path: src/content/bai-viet
+    filename: "{year}-{month}-{day}-{primary}.md"
+    fields:
+      - { name: tieuDe, label: Tiêu đề, type: string, required: true }
+      - { name: moTa, label: Mô tả ngắn (dưới 155 ký tự), type: string, required: true }
+      - { name: ngay, label: Ngày đăng, type: date, required: true }
+      - { name: nhap, label: Bản nháp (chưa đăng), type: boolean, default: false }
+      - { name: body, label: Nội dung, type: rich-text }

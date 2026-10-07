@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TEN_NGUOI}} | Liên kết</title>
+<meta name="description" content="[[Một câu: bạn là ai và người đọc tìm thấy gì ở đây.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="{{TEN_NGUOI}}">
+<meta property="og:description" content="[[Một câu: bạn là ai và người đọc tìm thấy gì ở đây.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<style>
+  /* riêng trang liên kết: một cột hẹp, nút to dễ bấm bằng ngón cái */
+  .lien-ket { max-width: 30rem; margin-inline: auto; padding: var(--kc-6) var(--le) var(--kc-5); text-align: center; }
+  .lien-ket .chan-dung, .lien-ket .cho-anh { margin: 0 auto var(--kc-3); }
+  .lien-ket .cho-anh { width: 7.5rem; border-radius: 50%; padding: var(--kc-1); }
+  .lien-ket h1 { font-size: var(--co-h2); margin-bottom: var(--kc-1); }
+  .ds-lien-ket { list-style: none; padding: 0; display: grid; gap: var(--kc-2); margin: var(--kc-4) 0; }
+  .ds-lien-ket li + li { margin-top: 0; }
+  .ds-lien-ket .nut { width: 100%; min-height: 3.5rem; }
+</style>
+</head>
+<body>
+<main id="noi-dung" class="lien-ket">
+  <!-- SỬA Ở ĐÂY: ảnh đại diện thật, vuông 480x480 -->
+  <div class="cho-anh" style="--ti-le: 1 / 1">Ảnh 480 x 480</div>
+  <h1>{{TEN_NGUOI}}</h1>
+  <p class="phu">{{CHUC_DANH}}</p>
+  <!-- 5-8 liên kết, xếp theo việc người xem cần nhất; thêm ?utm_source=bio để biết lượt đến từ đâu -->
+  <ul class="ds-lien-ket">
+    <li><a class="nut" href="[[link]]">[[Việc quan trọng nhất lúc này: đăng ký khoá học mùa thu]]</a></li>
+    <li><a class="nut nut--phu" href="[[link]]">[[Đọc bài viết mới]]</a></li>
+    <li><a class="nut nut--phu" href="[[link]]">[[Nghe tập podcast mới]]</a></li>
+    <li><a class="nut nut--phu" href="{{ZALO_LINK}}">Nhắn Zalo</a></li>
+  </ul>
+</main>
+<footer class="chan-trang" id="lien-he">
+  <div class="khung giua">
+    <p>{{CHU_QUAN}}</p>
+    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{TEN}}</p>
+  </div>
+</footer>
+<script src="assets/js/nen.js" defer></script>
+</body>
+</html>

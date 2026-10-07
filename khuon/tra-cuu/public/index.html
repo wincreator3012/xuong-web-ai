@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TIEU_DE}} | {{TEN}}</title>
+<meta name="description" content="[[Tra cứu nhanh: kho gồm gì, dành cho ai.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="{{TEN}}">
+<meta property="og:title" content="{{TIEU_DE}}">
+<meta property="og:description" content="[[Tra cứu nhanh: kho gồm gì, dành cho ai.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<style>
+  /* trang công cụ: ưu tiên quét nhanh, khoảng trống phục vụ việc tìm chứ không để trình diễn */
+  .thanh-tim { display: grid; gap: var(--kc-2); margin-block: var(--kc-3) var(--kc-4); }
+  @media (min-width: 40rem) { .thanh-tim { grid-template-columns: 1fr 14rem; align-items: end; } }
+  .ket-qua { list-style: none; padding: 0; display: grid; gap: var(--kc-2); }
+  .ket-qua li + li { margin-top: 0; }
+  .ket-qua .the h2 { font-size: var(--co-h3); margin-bottom: 0.25rem; }
+  .ket-qua .the a { color: var(--chu); text-decoration: none; }
+  .ket-qua .the a:hover { color: var(--lien-ket); text-decoration: underline; }
+  .nhom { font-size: var(--co-nho); color: var(--lien-ket); font-weight: 600; }
+  #chi-tiet { scroll-margin-top: var(--kc-3); }
+  #chi-tiet .nguon { font-size: var(--co-nho); color: var(--chu-phu); border-top: 1px solid var(--vien); padding-top: var(--kc-2); margin-top: var(--kc-3); }
+</style>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+<header class="dau-trang">
+  <div class="khung"><a class="ten-web" href="./">{{LOGO_DAU}}</a></div>
+</header>
+
+<main id="noi-dung" class="phan phan--sat">
+  <div class="khung">
+    <div class="cot-van">
+      <h1>{{TIEU_DE}}</h1>
+      <p class="dan">[[Một câu: kho gồm bao nhiêu mục, về chủ đề gì, ai biên soạn.]]</p>
+    </div>
+
+    <!-- tìm và lọc: gõ không dấu vẫn tìm ra; địa chỉ trang đổi theo, gửi link là người nhận thấy đúng kết quả -->
+    <form class="thanh-tim" role="search">
+      <div class="o">
+        <label for="tim">Tìm</label>
+        <input id="tim" type="search" autocomplete="off" placeholder="Gõ từ khoá, có dấu hay không dấu đều được">
+      </div>
+      <div class="o">
+        <label for="loc">Nhóm</label>
+        <select id="loc"><option value="">Tất cả</option></select>
+      </div>
+    </form>
+    <p class="phu nho" id="dem" role="status" aria-live="polite"></p>
+    <ul class="ket-qua" id="ket-qua"></ul>
+    <noscript><p class="luu-y">Công cụ tra cứu cần JavaScript. Bạn bật JavaScript, hoặc mở tệp du-lieu/muc.json để xem toàn bộ dữ liệu.</p></noscript>
+
+    <article class="the the--phu cot-van" id="chi-tiet" hidden tabindex="-1"></article>
+  </div>
+</main>
+
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <div class="luoi luoi--2">
+      <div><p><b>{{CHU_QUAN}}</b></p><p>Biên soạn: {{TEN_NGUOI}}</p></div>
+      <div><p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p><p>{{DIEN_THOAI}}</p></div>
+    </div>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{TEN}}</p>
+  </div>
+</footer>
+<script src="assets/js/nen.js" defer></script>
+<script src="assets/js/tra-cuu.js" defer></script>
+</body>
+</html>

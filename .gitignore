@@ -1,0 +1,24 @@
+# rác hệ thống và bản chép của ứng dụng (repo không chứa nháp, tạm; tools/kiem-sach.py kiểm)
+Claude outputs/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+.env.*
+# cấu hình riêng từng máy
+cau-hinh.json
+# PHẦN CỦA BẠN (tạo từ các tệp *.mau.* ở bước cài, không lên git chung để cập nhật xưởng không đụng tới):
+# muốn lưu phong cách vào kho git riêng của bạn thì xoá các dòng dưới đây
+brand/brand.json
+brand/logo/*
+!brand/logo/README.md
+!brand/logo/logo-mau-sang.png
+!brand/logo/logo-mau-toi.png
+!brand/logo/bieu-tuong-mau.png
+phong-cach/PHONG-CACH.md
+phong-cach/tu-ngu.json

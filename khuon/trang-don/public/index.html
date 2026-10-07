@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SỬA Ở ĐÂY: tiêu đề tab (dưới 60 ký tự), mô tả (dưới 155 ký tự); cũng là chữ hiện khi chia sẻ link -->
+<title>{{TIEU_DE}} | {{TEN}}</title>
+<meta name="description" content="[[Một câu nói rõ trang này dành cho ai và giúp họ điều gì.]]">
+<link rel="canonical" href="{{URL}}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="{{TEN}}">
+<meta property="og:title" content="{{TIEU_DE}}">
+<meta property="og:description" content="[[Một câu nói rõ trang này dành cho ai và giúp họ điều gì.]]">
+<meta property="og:url" content="{{URL}}/">
+<meta property="og:image" content="{{URL}}/assets/img/chia-se.jpg">
+<meta name="theme-color" content="{{MAU_NEN}}">
+{{FAVICON}}
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/nen.css">
+<link rel="stylesheet" href="assets/css/trang.css">
+<script src="assets/js/nen.js" defer></script>
+</head>
+<body>
+<a class="bo-qua" href="#noi-dung">Bỏ qua, tới nội dung</a>
+<header class="dau-trang">
+  <div class="khung"><a class="ten-web" href="#">{{LOGO_DAU}}</a></div>
+</header>
+
+<main id="noi-dung">
+  <!-- mở đầu: ai, làm gì, cho ai -->
+  <section class="hero">
+    <div class="khung cot-van">
+      <span class="nhan-muc">[[Nhãn ngắn: loại trang hoặc thời điểm]]</span>
+      <h1>[[Tiêu đề nói thẳng điều người đọc nhận được]]</h1>
+      <p class="dan">[[Một đến hai câu mở rộng tiêu đề, cụ thể, không tính từ rỗng.]]</p>
+      <div class="cum-nut">
+        <a class="nut" href="#lien-he">[[Động từ hành động chính]]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- nội dung chính: văn xuôi, mỗi phần một ý -->
+  <section class="phan phan--phu">
+    <div class="khung cot-van hien">
+      <h2>[[Ý thứ nhất]]</h2>
+      <p>[[Đoạn văn trọn vẹn. Lập luận và câu chuyện viết thành đoạn, gạch đầu dòng chỉ dành cho danh sách thật.]]</p>
+    </div>
+  </section>
+
+  <section class="phan">
+    <div class="khung hai-cot">
+      <div class="hien">
+        <h2>[[Ý thứ hai]]</h2>
+        <p>[[Đoạn văn.]]</p>
+      </div>
+      <div class="cho-anh hien" style="--ti-le: 3 / 2">Ảnh thật minh hoạ ý này, 1600 x 1067</div>
+    </div>
+  </section>
+</main>
+
+<footer class="chan-trang" id="lien-he">
+  <div class="khung">
+    <p class="dinh-vi">{{LOGO_CHAN}}</p>
+    <div class="luoi luoi--2">
+      <div><p><b>{{CHU_QUAN}}</b></p><p>Chịu trách nhiệm nội dung: {{TEN_NGUOI}}</p></div>
+      <div><p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p><p>{{DIEN_THOAI}}</p><p><a href="{{ZALO_LINK}}">Nhắn Zalo</a></p></div>
+    </div>
+    <p class="ban-quyen">© <span data-nam>{{NAM}}</span> {{TEN}}</p>
+  </div>
+</footer>
+</body>
+</html>
