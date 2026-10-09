@@ -1,13 +1,13 @@
 ---
 name: web-trien-khai
-description: "Đưa web của xưởng web AI (repo xuong-web-ai) lên mạng và vận hành: chọn nơi lưu trữ (Cloudflare mặc định, Firebase, Vercel, Netlify, GitHub Pages), dẫn người dùng từng bước tạo tài khoản GitHub, Cloudflare, Firebase, bật xác thực hai lớp, nối kho để web tự cập nhật, mua tên miền .vn hoặc .com, trỏ DNS, email theo tên miền, đo lượt xem, Search Console, gia hạn, bàn giao web cho đối tác. Kích hoạt khi người dùng nói đưa web lên mạng, deploy, publish, đưa lên GitHub, Vercel, Cloudflare, Netlify, Firebase, mua tên miền, trỏ tên miền, cấu hình DNS, web không vào được, lỗi SSL, email tên miền, đo lượt xem, Google không tìm thấy web, bàn giao web cho khách, gia hạn tên miền. Dùng sau khi web đã qua cổng kiểm của web-thiet-ke."
+description: "Đưa web của xưởng web AI (repo xuong-web-ai) lên mạng và vận hành: chọn nơi lưu trữ (Cloudflare mặc định, Firebase, Vercel, Netlify, GitHub Pages), dẫn người dùng từng bước tạo tài khoản GitHub, Cloudflare, Firebase, bật xác thực hai lớp, nối kho để web tự cập nhật, mua tên miền .vn hoặc .com, trỏ DNS, email theo tên miền, đo lượt xem, Search Console, gia hạn, bàn giao web cho đối tác. Kích hoạt khi người dùng nói đưa web lên mạng, deploy, publish, đưa lên GitHub, Vercel, Cloudflare, Netlify, Firebase, mua tên miền, trỏ tên miền, cấu hình DNS, web không vào được, lỗi SSL, email tên miền, đo lượt xem, Google không tìm thấy web, bàn giao web cho khách, gia hạn tên miền. Dùng sau khi web đã qua cổng kiểm của web-thiet-ke, kể cả khi người dùng không nhắc tên skill."
 ---
 
 # Xưởng web AI: đưa lên mạng và vận hành
 
 Đọc `CLAUDE.md` và `docs/QUY-TRINH-KY-THUAT.md` của repo `xuong-web-ai` trước. Chuẩn: `chuan/07-trien-khai.md` (nơi lưu trữ, tên miền, DNS, email, đo lường, bảo trì), `chuan/08-phap-ly-vn.md`. Việc người dùng tự tay làm: thẻ trong `huong-dan/` (danh mục và cách dẫn ở `huong-dan/README.md`).
 
-Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới, dựa vào bản chụp chuẩn và phong cách trong `references/` của skill (danh sách và dấu gói ở `references/DONG-GOI.md`), nói rõ với người dùng là đang dựa vào bản chụp, công cụ kiểm của xưởng chưa chạy và khuôn chưa dùng được.
+Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới: bản skill có kèm `references/` (gói .zip của `tools/dong-goi-skill.py`) thì dựa vào bản chụp chuẩn và phong cách ở đó (danh sách, dấu gói: `references/DONG-GOI.md`); bản chỉ có SKILL.md (lưu qua thẻ đề xuất skill) thì dựa vào các bước và quy tắc cứng trong tệp này. Nói rõ với người dùng là đang làm khi chưa có xưởng, công cụ kiểm chưa chạy, khuôn chưa dùng được, và việc nào nên làm lại khi gắn được thư mục.
 
 ## Quy trình
 

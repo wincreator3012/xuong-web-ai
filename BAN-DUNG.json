@@ -994,8 +994,8 @@
   {
    "duong": "skills/web-thiet-ke/SKILL.md",
    "loai": "chep",
-   "sha256": "58fd0d7ef7d12207a5211d935091661d83130258380dd6a17c66483b36ec9f19",
-   "byte": 6859
+   "sha256": "0a2934fbf8663eb0cb77608c6695e64e6898dcd65445c553f5f6bc6fdfbf46b8",
+   "byte": 7147
   },
   {
    "duong": "skills/web-thiet-ke/kem.json",
@@ -1024,8 +1024,8 @@
   {
    "duong": "skills/web-trien-khai/SKILL.md",
    "loai": "chep",
-   "sha256": "79d4820735379632f790af6a7631a03a846f7fc9820cba7185e7581c65637be1",
-   "byte": 5714
+   "sha256": "7932a4d956f18a52e503c5d9cfa396a06b3554d4bb1170fc206e5b7589deeaea",
+   "byte": 6002
   },
   {
    "duong": "skills/web-trien-khai/kem.json",
@@ -1036,8 +1036,8 @@
   {
    "duong": "skills/web-ung-dung/SKILL.md",
    "loai": "chep",
-   "sha256": "adc30d1d12c9eca3e5e036150d83dd6098eaa8a72b526ae38dc4b209363d5046",
-   "byte": 6068
+   "sha256": "e4a4f61cdd1428405f6cf82f678fdd2c72fd365ccc093035eac5a4b1e163912e",
+   "byte": 6356
   },
   {
    "duong": "skills/web-ung-dung/kem.json",
@@ -1072,8 +1072,8 @@
   {
    "duong": "tools/dong-goi-skill.py",
    "loai": "chep",
-   "sha256": "e45b97c2870ea89bac4c0a0f0811ed811b8e3d5c084e2760d865e7f8beb83b6c",
-   "byte": 17695
+   "sha256": "c7fc6dbe1dd4a59fffdfa277757c6e6670938d43a282b2ab01d3bdd1f9fe05b4",
+   "byte": 17924
   },
   {
    "duong": "tools/dua-len.py",

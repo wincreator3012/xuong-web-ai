@@ -1,13 +1,13 @@
 ---
 name: web-ung-dung
-description: "Tầng ứng dụng của xưởng web AI (repo xuong-web-ai): web có form ghi Google Sheets, thanh toán VietQR và đối soát, web nhiều trang và blog bằng Astro 7, web-app có đăng nhập Google và dữ liệu riêng từng người bằng Firebase (luật Firestore, quản trị, xuất CSV), trắc nghiệm, tra cứu dữ liệu, và rà an toàn web-app cũ. Kích hoạt khi người dùng nói làm web-app, có đăng nhập, lưu dữ liệu, quản lý học viên, bài thi online, chấm điểm, dashboard, form ghi vào Google Sheet, nhận đăng ký tự động, thu tiền, VietQR, blog, nhiều trang, Astro, Firebase, Firestore, Supabase, kiểm bảo mật app, app bị lộ khoá. Đi cùng web-thiet-ke (tư vấn, thiết kế, kiểm) và web-trien-khai (đưa lên)."
+description: "Tầng ứng dụng của xưởng web AI (repo xuong-web-ai): web có form ghi Google Sheets, thanh toán VietQR và đối soát, web nhiều trang và blog bằng Astro 7, web-app có đăng nhập Google và dữ liệu riêng từng người bằng Firebase (luật Firestore, quản trị, xuất CSV), trắc nghiệm, tra cứu dữ liệu, và rà an toàn web-app cũ. Kích hoạt khi người dùng nói làm web-app, có đăng nhập, lưu dữ liệu, quản lý học viên, bài thi online, chấm điểm, dashboard, form ghi vào Google Sheet, nhận đăng ký tự động, thu tiền, VietQR, blog, nhiều trang, Astro, Firebase, Firestore, Supabase, kiểm bảo mật app, app bị lộ khoá, kể cả khi người dùng không nhắc tên skill. Đi cùng web-thiet-ke (tư vấn, thiết kế, kiểm) và web-trien-khai (đưa lên)."
 ---
 
 # Xưởng web AI: tầng ứng dụng (bậc 1-3)
 
 Đọc `CLAUDE.md`, `docs/QUY-TRINH-KY-THUAT.md` của repo `xuong-web-ai`; chuẩn chính: `chuan/06-du-lieu-bao-mat.md`, `chuan/05-ky-thuat.md`, `chuan/01-tu-van-giai-phap.md` mục 3-5; bài học từ web-app cũ của tác giả xưởng: `nghien-cuu/E-bai-hoc-web-app.md`.
 
-Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới, dựa vào bản chụp chuẩn và phong cách trong `references/` của skill (danh sách và dấu gói ở `references/DONG-GOI.md`), nói rõ với người dùng là đang dựa vào bản chụp, công cụ kiểm của xưởng chưa chạy và khuôn chưa dùng được.
+Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới: bản skill có kèm `references/` (gói .zip của `tools/dong-goi-skill.py`) thì dựa vào bản chụp chuẩn và phong cách ở đó (danh sách, dấu gói: `references/DONG-GOI.md`); bản chỉ có SKILL.md (lưu qua thẻ đề xuất skill) thì dựa vào các bước và quy tắc cứng trong tệp này. Nói rõ với người dùng là đang làm khi chưa có xưởng, công cụ kiểm chưa chạy, khuôn chưa dùng được, và việc nào nên làm lại khi gắn được thư mục.
 
 ## Nguyên tắc chọn
 

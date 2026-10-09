@@ -282,7 +282,10 @@ def so_sanh(ten, tep, thu_muc):
                 continue
             p = os.path.join(dp, f)
             with open(p, 'rb') as h:
-                co[f'{ten}/' + os.path.relpath(p, goc).replace(os.sep, '/')] = bam(h.read())
+                b = h.read()
+            if f == 'SKILL.md':  # nơi lưu skill thường tự thêm ngoặc kép quanh name: không tính là lệch
+                b = re.sub(rb'^name: "([^"\n]*)"$', rb'name: \1', b, count=1, flags=re.M)
+            co[f'{ten}/' + os.path.relpath(p, goc).replace(os.sep, '/')] = bam(b)
     khac = []
     for k in sorted(set(tep) | set(co)):
         if k not in co:
