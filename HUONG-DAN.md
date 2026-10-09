@@ -1,6 +1,6 @@
 # HƯỚNG DẪN SỬ DỤNG XƯỞNG WEB
 
-Tài liệu cho việc hằng ngày, sau khi đã cài xưởng theo [BAT-DAU.md](BAT-DAU.md). Đọc lướt một lần; về sau tra mục cần.
+Tài liệu cho việc hằng ngày, sau khi trợ lý AI đã dựng và thiết lập xưởng cho bạn. Đọc lướt một lần; về sau tra mục cần.
 
 ## 1. Một web đi qua những bước nào
 
@@ -61,7 +61,7 @@ Mỗi việc có một thẻ trong `huong-dan/` (danh mục: `huong-dan/README.m
 
 ## 5. Xem web trên máy bạn
 
-- **Bấm đúp `Xem web`** ở gốc repo (Mac: `Xem web.command`, Windows: `Xem web.bat`), gõ tên web khi được hỏi (hoặc Enter để chọn web làm gần nhất). Trình duyệt mở web; giữ cửa sổ đen mở trong lúc xem, đóng khi xong.
+- **Bấm đúp `Xem web`** trong thư mục xưởng `xuong-web-ai` (Mac: `Xem web.command`, Windows: `Xem web.bat`), gõ tên web khi được hỏi (hoặc Enter để chọn web làm gần nhất). Trình duyệt mở web; giữ cửa sổ đen mở trong lúc xem, đóng khi xong.
 - Web một trang đơn giản: bấm đúp `Web/<tên-web>/public/index.html` cũng xem được. Trang tra cứu, trắc nghiệm, web nhiều trang thì cần cách thứ nhất.
 - Xem trên điện thoại: chờ web lên mạng (thường là địa chỉ tạm miễn phí trước khi có tên miền), mở link trên điện thoại thật, bấm thử mọi nút, gửi thử form.
 
@@ -84,7 +84,7 @@ Tên, chức danh nguyên văn, chủ đề màu, logo, liên hệ, từ ngữ �
 
 ## 8. Thư mục
 
-Trong "Web AI": `xuong-web-ai/` (xưởng; đừng để gì khác vào đây), `Du an/` (hồ sơ từng dự án: `BRIEF.md`, `THIET-KE.md`, `SO-GOP-Y.md`, `VAN-HANH.md`, báo cáo kiểm và ảnh chụp trong `kiem/`), `Web/` (mã nguồn từng web; phần đưa lên mạng nằm trong `public/`, web nhiều trang thì trong `dist/` sau khi dựng). Muốn đổi chỗ đặt hai thư mục kia: nói với trợ lý ở đầu cuộc trò chuyện.
+Trong "Web AI": `xuong-web-ai/` (xưởng của bạn, dựng từ bản vẽ; đừng để gì khác vào đây), `Du an/` (hồ sơ từng dự án: `BRIEF.md`, `THIET-KE.md`, `SO-GOP-Y.md`, `VAN-HANH.md`, báo cáo kiểm và ảnh chụp trong `kiem/`), `Web/` (mã nguồn từng web; phần đưa lên mạng nằm trong `public/`, web nhiều trang thì trong `dist/` sau khi dựng). Gói skill để lưu vào tài khoản AI nằm ở `Du an/_skill/`. Muốn đổi chỗ đặt hai thư mục kia: nói với trợ lý ở đầu cuộc trò chuyện.
 
 ## 9. Dùng xưởng hiệu quả nhất
 
@@ -122,6 +122,9 @@ Trong "Web AI": `xuong-web-ai/` (xưởng; đừng để gì khác vào đây), 
 | Đổi phong cách | "Từ nay chức danh của tôi là ...", "đổi chủ đề màu mặc định sang ..." |
 | Nghe lại giới thiệu | "Giới thiệu lại xưởng" |
 | Kiểm toàn bộ xưởng | "Kiểm tra xưởng" |
+| Nhận bản mới của xưởng | "Cập nhật xưởng" |
+| Lưu skill vào tài khoản AI | "Lưu skill vào tài khoản" |
+| Sau khi đổi phong cách | "Đóng gói lại skill" |
 
 ## 12. Sự cố thường gặp
 
@@ -133,8 +136,12 @@ Trong "Web AI": `xuong-web-ai/` (xưởng; đừng để gì khác vào đây), 
 | Form gửi không thấy thư | khoá truy cập dịch vụ form chưa điền, hoặc thư vào hộp thư rác | kiểm hộp thư rác; báo trợ lý |
 | Đăng nhập Google trong Zalo, Facebook báo lỗi | trình duyệt cài sẵn trong ứng dụng chặn đăng nhập Google | web-app của xưởng hiện lời nhắc "mở bằng trình duyệt"; hướng dẫn người dùng bấm ba chấm, chọn mở bằng trình duyệt |
 | Sửa xong mà web trên mạng chưa đổi | chưa Commit, Push; hoặc trình duyệt còn nhớ bản cũ | mở GitHub Desktop kiểm; tải lại trang có giữ phím Shift |
-| `Xem web` không mở | máy chưa có Python, hoặc Mac chặn tệp lần đầu | xem BAT-DAU.md mục "Những điều nên biết" |
+| `Xem web` không mở | máy chưa có Python, hoặc Mac chặn tệp lần đầu | Mac: mở System Settings [Cài đặt hệ thống] > Privacy & Security [Quyền riêng tư và bảo mật], kéo xuống cuối, bấm Open Anyway [Vẫn mở]; Windows: bấm More info rồi Run anyway; chưa có Python thì nhờ trợ lý hướng dẫn cài |
 
 ## 13. Cập nhật xưởng
 
-Xưởng được tác giả cập nhật định kỳ (khuôn mới, công cụ sửa lỗi, giá và luật mới). Cách cập nhật mà không mất phong cách hay web của bạn: `docs/DONG-GOP.md`. Ngắn gọn: tải bản mới vào một thư mục tạm, rồi nói "Cập nhật xưởng từ thư mục <tên thư mục tạm>, giữ nguyên phong cách và cấu hình của tôi".
+Xưởng của bạn được trợ lý AI dựng từ bản vẽ Xưởng web AI và không nối với bản vẽ: không có gì tự đổi sau lưng bạn. Tác giả cập nhật bản vẽ định kỳ (khuôn mới, công cụ sửa lỗi, giá và luật mới). Muốn nhận bản mới, nói "cập nhật xưởng": trợ lý đọc nhật ký thay đổi của bản vẽ, kể bạn nghe điều gì mới, điều gì sẽ đổi trong xưởng, hỏi ý bạn, rồi chép phần năng lực mới vào xưởng. Phong cách, cấu hình, web và hồ sơ của bạn không bị đụng tới; tệp năng lực bạn đã chủ ý sửa được giữ lại để cùng quyết. Web đã làm không tự đổi theo: muốn một web nhận nền chung mới thì nói "cập nhật nền chung cho web <tên>".
+
+## 14. Skill của xưởng trên tài khoản AI
+
+Bốn skill của xưởng (những quy trình trợ lý làm theo) có bản gốc trong `skills/`. Lưu bản đóng gói của chúng vào tài khoản AI thì trợ lý nhận ra việc làm web ở mọi cuộc trò chuyện, kể cả khi bạn quên mở thư mục, và vẫn nói đúng phong cách của bạn khi đang ở điện thoại. Skill là gì, lưu thế nào, khi nào đóng gói lại, gỡ rối: `skills/README.md`.

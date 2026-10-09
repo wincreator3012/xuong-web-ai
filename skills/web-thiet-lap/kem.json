@@ -1,0 +1,8 @@
+{
+  "_huong-dan": "Tệp của xưởng (đường dẫn tính từ gốc xưởng) được tools/dong-goi-skill.py chụp vào references/ của gói skill, để skill trên tài khoản vẫn làm được khi phiên chưa gắn thư mục xưởng. Giữ ngắn: chỉ tài liệu skill thật sự cần khi không có xưởng.",
+  "tep": [
+    "phong-cach/PHONG-CACH.md",
+    "HUONG-DAN.md",
+    "skills/README.md"
+  ]
+}

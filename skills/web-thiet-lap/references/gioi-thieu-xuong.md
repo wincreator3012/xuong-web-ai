@@ -7,7 +7,7 @@ Kịch bản cho trợ lý AI khi người dùng vừa thiết lập xong, hoặ
 - **Có hệ thống, nhưng từng chặng một.** Sáu chặng dưới đây theo thứ tự cố định. Mỗi lượt chỉ nói một chặng (vài đoạn ngắn), rồi hỏi một câu để người dùng chọn đi tiếp, đi sâu hay bỏ qua. Không đổ cả danh mục một lần.
 - **Lời thường, không thuật ngữ kỹ thuật.** Không nhắc Playwright, wrangler, DNS record, CSP, sandbox trừ khi người dùng hỏi. Nói theo thứ họ sẽ thấy: "bản nháp", "tờ tổng thể", "địa chỉ web".
 - **Cá nhân hoá bằng `phong-cach/PHONG-CACH.md`.** Loại web họ hay cần (mục 2) đưa lên đầu ở chặng 2, ví dụ lấy từ lĩnh vực và chương trình của họ.
-- **Chỉ nói điều xưởng thật sự có.** Nguồn sự thật: bảng skill trong `CLAUDE.md`, `README.md`, `HUONG-DAN.md`, `khuon/README.md`, `huong-dan/README.md`. Không hứa tính năng chưa có.
+- **Chỉ nói điều xưởng thật sự có.** Nguồn sự thật: bảng skill trong `CLAUDE.md`, `HUONG-DAN.md`, `skills/README.md`, `khuon/README.md`, `huong-dan/README.md`. Không hứa tính năng chưa có.
 - **Người dùng vắng mặt hoặc muốn bỏ qua:** tóm tắt chặng 1 và 6 trong một tin nhắn, ghi dấu đã giới thiệu, nói họ gọi lại bằng câu "giới thiệu lại xưởng".
 
 ## Chặng 1. Xưởng là gì, và ba lời hứa
@@ -67,7 +67,7 @@ Kết chặng: "Mình nói rõ những việc chỉ bạn làm được nhé?"
 
 ## Chặng 4. Việc của bạn, và cách dùng hiệu quả
 
-Phần một, việc chỉ chủ web làm được (đọc `HUONG-DAN.md` mục 4): tạo tài khoản và bật xác thực hai lớp, thanh toán, khai thông tin tên miền, bấm cho phép kết nối, đưa mã lên GitHub bằng GitHub Desktop. Nhấn: mọi thứ đứng tên bạn; mình không bao giờ hỏi mật khẩu, mã xác thực; ai hỏi những thứ đó thì đừng đưa.
+Phần một, việc chỉ chủ web làm được (đọc `HUONG-DAN.md` mục 4): tạo tài khoản và bật xác thực hai lớp, thanh toán, khai thông tin tên miền, bấm cho phép kết nối, đưa mã lên GitHub bằng GitHub Desktop, lưu (và thay khi cần) bộ skill của xưởng trên tài khoản AI. Nhấn: mọi thứ đứng tên bạn; mình không bao giờ hỏi mật khẩu, mã xác thực; ai hỏi những thứ đó thì đừng đưa.
 
 Phần hai, chọn năm hoặc sáu thói quen quan trọng nhất cho người này từ `HUONG-DAN.md` mục 9, thường là:
 
@@ -92,7 +92,7 @@ Hỏi một câu có lựa chọn: "Bạn muốn làm web nào đầu tiên?", b
 
 1. Nói rõ cần đưa gì (chữ, ảnh, giá, lịch, logo đối tác) và sẽ cần tài khoản nào khi đưa lên mạng.
 2. Đưa đúng câu họ sẽ nói (từ cột "Câu mẫu").
-3. Nhắc nơi tìm hướng dẫn: `HUONG-DAN.md` cho việc hằng ngày, và câu "giới thiệu lại xưởng" để nghe lại phần này.
+3. Nhắc nơi tìm hướng dẫn: `HUONG-DAN.md` cho việc hằng ngày, và câu "giới thiệu lại xưởng" để nghe lại phần này. Đã lưu skill lên tài khoản: từ nay nói "làm web..." ở bất kỳ cuộc trò chuyện nào trợ lý cũng nhận ra; đổi phong cách thì nhờ "đóng gói lại skill". Chưa lưu: nhắc câu "lưu skill vào tài khoản" khi họ sẵn sàng.
 4. Ghi dấu đã giới thiệu: `python3 tools/cai-dat.py --danh-dau gioi-thieu`.
 
 Kết bằng một câu hỏi mở thật, ví dụ: "Người xem đầu tiên bạn mong mở trang này là ai?"

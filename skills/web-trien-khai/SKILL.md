@@ -7,7 +7,7 @@ description: "Đưa web của xưởng web AI (repo xuong-web-ai) lên mạng v�
 
 Đọc `CLAUDE.md` và `docs/QUY-TRINH-KY-THUAT.md` của repo `xuong-web-ai` trước. Chuẩn: `chuan/07-trien-khai.md` (nơi lưu trữ, tên miền, DNS, email, đo lường, bảo trì), `chuan/08-phap-ly-vn.md`. Việc người dùng tự tay làm: thẻ trong `huong-dan/` (danh mục và cách dẫn ở `huong-dan/README.md`).
 
-Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục; không gắn được thì vẫn làm theo các bước dưới, nói rõ công cụ kiểm của xưởng chưa chạy và khuôn, chuẩn chưa đọc được.
+Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới, dựa vào bản chụp chuẩn và phong cách trong `references/` của skill (danh sách và dấu gói ở `references/DONG-GOI.md`), nói rõ với người dùng là đang dựa vào bản chụp, công cụ kiểm của xưởng chưa chạy và khuôn chưa dùng được.
 
 ## Quy trình
 

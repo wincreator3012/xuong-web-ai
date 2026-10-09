@@ -1,0 +1,13 @@
+{
+  "_huong-dan": "Mẫu XUONG.json: trợ lý dựng xưởng điền rồi ghi thành XUONG.json ở gốc xưởng (DUNG-XUONG.md bước 4). Tệp này đánh dấu thư mục là XƯỞNG ĐÃ DỰNG, không phải bản vẽ, và giữ địa chỉ bản vẽ để cập nhật về sau. Không chứa mật khẩu, khoá.",
+  "banVe": "https://github.com/wincreator3012/xuong-web-ai",
+  "nguonTho": "https://raw.githubusercontent.com/wincreator3012/xuong-web-ai/main/",
+  "phienBan": "[phienBan trong BAN-DUNG.json lúc dựng]",
+  "ngayDung": "[YYYY-MM-DD]",
+  "ngayCapNhat": "[YYYY-MM-DD, bằng ngayDung khi mới dựng]",
+  "troLyDung": "[ứng dụng AI đã dựng, ví dụ Claude Cowork]",
+  "thuMucLamViec": "[đường dẫn thư mục làm việc trên máy người dùng, ví dụ ~/Documents/Web AI]",
+  "xungHoNguoiDung": "[trợ lý gọi người dùng là gì: bạn, anh, chị, thầy, cô, tên riêng]",
+  "ungDungHangNgay": "[ứng dụng AI người dùng dùng hằng ngày, quyết định cách lưu skill: Claude, ChatGPT, khác]",
+  "khongPhaiBanSao": "Xưởng dựng từ bản vẽ, không nối git với bản vẽ: không pull; cập nhật bằng python3 tools/ban-dung.py --so-ban-ve rồi --doc-tho."
+}

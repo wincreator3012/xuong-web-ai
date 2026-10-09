@@ -6,7 +6,7 @@
     python3 tools/cai-dat.py --trang-thai        # chỉ xem: bước nào xong, trình duyệt kiểm, Node, việc tiếp theo
     python3 tools/cai-dat.py --khong-cai         # không cài gì qua mạng, chỉ kiểm và tạo thử
     python3 tools/cai-dat.py --khong-thu         # bỏ bước tạo thử
-    python3 tools/cai-dat.py --danh-dau thiet-lap|gioi-thieu   # trợ lý ghi dấu sau bước thiết lập phong cách, buổi giới thiệu
+    python3 tools/cai-dat.py --danh-dau thiet-lap|skill|gioi-thieu   # trợ lý ghi dấu sau bước phong cách, skill riêng, giới thiệu
 
 Các bước (mỗi bước tự bỏ qua nếu đã xong):
   1. Python 3.9+.
@@ -184,12 +184,13 @@ def trang_thai(in_ra=True):
         'node': node,
         'taoThu': bool(cd.get('taoThu')),
         'daThietLap': bool(cd.get('daThietLap')) and not con_pc and not con_br,
+        'daTaoSkill': bool(cd.get('daTaoSkill')),
         'daGioiThieu': bool(cd.get('daGioiThieu')),
     }
     if in_ra:
         v = lambda b: 'có' if b else 'chưa'
         print('TRẠNG THÁI XƯỞNG WEB')
-        print(f'  Repo:              {GOC}')
+        print(f'  Xưởng:             {GOC}')
         print(f'  Python:            {tt["python"]} ({tt["heDieuHanh"]})')
         print(f'  cau-hinh.json:     {v(tt["cauHinh"])}')
         print(f'  Thư mục dự án:     {tt["thuMucDuAn"] or "chưa có"}')
@@ -204,6 +205,7 @@ def trang_thai(in_ra=True):
         else:
             print(f'  Phong cách:        CHƯA ({len(con_pc)} chỗ trống trong phong-cach/PHONG-CACH.md, '
                   f'{len(con_br)} trong brand/brand.json' + (f': {", ".join(con_br[:4])}' if con_br and con_br[0][0] != '(' else '') + ')')
+        print(f'  Skill riêng:       {"đã xong (đóng gói, giải thích, lưu hoặc hẹn sau)" if tt["daTaoSkill"] else "chưa (tools/dong-goi-skill.py, skills/README.md)"}')
         print(f'  Giới thiệu xưởng:  {"đã" if tt["daGioiThieu"] else "chưa"}')
         print('\nViệc tiếp theo: ' + viec_tiep(tt))
     return tt
@@ -216,6 +218,8 @@ def viec_tiep(tt):
         return 'chạy python3 tools/cai-dat.py để tạo thử và kiểm thử một web'
     if not tt['daThietLap']:
         return 'thiết lập phong cách: skill skills/web-thiet-lap/SKILL.md'
+    if not tt['daTaoSkill']:
+        return 'đóng gói skill riêng và hướng dẫn lưu vào tài khoản AI: skills/web-thiet-lap/SKILL.md bước 4'
     if not tt['daGioiThieu']:
         return 'giới thiệu xưởng cho người dùng: skills/web-thiet-lap/references/gioi-thieu-xuong.md'
     return 'xưởng sẵn sàng: làm web đầu tiên (skill skills/web-thiet-ke/SKILL.md)'
@@ -346,15 +350,20 @@ def main():
     ap.add_argument('--trang-thai', action='store_true')
     ap.add_argument('--khong-cai', action='store_true')
     ap.add_argument('--khong-thu', action='store_true')
-    ap.add_argument('--danh-dau', choices=['thiet-lap', 'gioi-thieu'])
+    ap.add_argument('--danh-dau', choices=['thiet-lap', 'skill', 'gioi-thieu'])
     a = ap.parse_args()
+    if os.path.exists(os.path.join(GOC, 'DUNG-XUONG.md')) and not os.path.exists(os.path.join(GOC, 'XUONG.json')) \
+            and not os.environ.get('XUONG_CHO_PHEP_BAN_VE'):
+        print('DỪNG: thư mục này là bản vẽ Xưởng web AI (có DUNG-XUONG.md, chưa có XUONG.json), không phải xưởng để cài.\n'
+              'Trợ lý AI dựng xưởng riêng ở thư mục làm việc khác theo DUNG-XUONG.md, rồi chạy lệnh này trong xưởng đó.')
+        sys.exit(1)
     if a.trang_thai:
         trang_thai()
         return
     if a.danh_dau:
         ch = doc_cau_hinh()
         cd = ch.setdefault('caiDat', {})
-        cd['daThietLap' if a.danh_dau == 'thiet-lap' else 'daGioiThieu'] = datetime.date.today().isoformat()
+        cd[{'thiet-lap': 'daThietLap', 'skill': 'daTaoSkill', 'gioi-thieu': 'daGioiThieu'}[a.danh_dau]] = datetime.date.today().isoformat()
         ghi_cau_hinh(ch)
         print(f'✓ đã ghi dấu {a.danh_dau}')
         return

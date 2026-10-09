@@ -7,7 +7,7 @@ description: "Lõi của xưởng web AI (repo xuong-web-ai): tư vấn nhu cầ
 
 Xưởng ở thư mục "Web AI" trên máy người dùng: repo `xuong-web-ai` (năng lực), `Du an/` (hồ sơ từng dự án), `Web/` (mã nguồn từng web). Đọc `CLAUDE.md` và `docs/QUY-TRINH-KY-THUAT.md` của repo trước; mọi đường dẫn dưới đây tính từ gốc repo. Skill chứa CÁCH LÀM; số liệu, chuẩn nằm ở `chuan/`, tên và chức danh ở `phong-cach/PHONG-CACH.md`, lệnh ở `docs/QUY-TRINH-KY-THUAT.md`.
 
-Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục; không gắn được thì vẫn làm theo các bước dưới, nói rõ công cụ kiểm của xưởng chưa chạy và khuôn, chuẩn chưa đọc được.
+Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới, dựa vào bản chụp chuẩn và phong cách trong `references/` của skill (danh sách và dấu gói ở `references/DONG-GOI.md`), nói rõ với người dùng là đang dựa vào bản chụp, công cụ kiểm của xưởng chưa chạy và khuôn chưa dùng được.
 
 ## Bảy bước
 

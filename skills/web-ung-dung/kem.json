@@ -1,0 +1,10 @@
+{
+  "_huong-dan": "Tệp của xưởng (đường dẫn tính từ gốc xưởng) được tools/dong-goi-skill.py chụp vào references/ của gói skill, để skill trên tài khoản vẫn làm được khi phiên chưa gắn thư mục xưởng. Giữ ngắn: chỉ tài liệu skill thật sự cần khi không có xưởng.",
+  "tep": [
+    "phong-cach/PHONG-CACH.md",
+    "chuan/05-ky-thuat.md",
+    "chuan/06-du-lieu-bao-mat.md",
+    "khuon/app-firebase/KIEM-BAO-MAT.md",
+    "skills/_chung/van-hanh.md"
+  ]
+}

@@ -6,7 +6,9 @@
 
 Cổng kiểm web (kiem-web.py) đọc web; cổng này đọc tài liệu của chính xưởng:
   1. SKILL.md: phần đầu YAML có name trùng tên thư mục, description dưới 1024 ký tự, không ngoặc nhọn.
-  2. Mỗi skill có mặt trong bảng "Việc nào, skill nào" của CLAUDE.md; tên skill nhắc trong tài liệu đều có thật.
+  2. Mỗi skill có mặt trong bảng "Việc nào, skill nào" của CLAUDE.md (bản vẽ công khai: mau-xuong/CLAUDE.md, mẫu
+     điểm vào của xưởng được dựng); tên skill nhắc trong tài liệu đều có thật; tệp khai trong kem.json của skill có thật
+     (trừ tệp sinh ra lúc cài như phong-cach/PHONG-CACH.md).
   3. Không có gạch dài (em dash) trong tài liệu (quy ước chữ mặc định của xưởng: gạch thường hoặc dấu hai chấm).
   4. Đường dẫn viết trong dấu `...` bắt đầu bằng một thư mục của repo (chuan/, tools/, skills/...) trỏ tới tệp hay
      thư mục có thật (`chuan/08` khớp tiền tố); bỏ qua mẫu có <x>, *, và đường dẫn bên trong một dự án.
@@ -73,6 +75,9 @@ def main():
     thu_skill = 'skills' if os.path.isdir(os.path.join(GOC, 'skills')) else 'skills-nguon'
     skills = sorted(os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(GOC, thu_skill, '*', 'SKILL.md')))
     claude = doc(os.path.join(GOC, 'CLAUDE.md'))
+    p_mau = os.path.join(GOC, 'mau-xuong', 'CLAUDE.md')
+    if 'skill' not in claude.lower() and os.path.exists(p_mau):
+        claude = doc(p_mau)  # bản vẽ: CLAUDE.md ở gốc chỉ trỏ về AGENTS.md; bảng skill nằm ở mẫu điểm vào của xưởng
     for s in skills:
         rel = f'{thu_skill}/{s}/SKILL.md'
         d, e = dau_yaml(doc(os.path.join(GOC, rel)))
@@ -88,6 +93,14 @@ def main():
             loi.append(f'{rel}: description {len(mo)} ký tự (trần 1024)')
         elif '<' in mo or '>' in mo:
             loi.append(f'{rel}: description chứa ngoặc nhọn')
+        pk = os.path.join(GOC, thu_skill, s, 'kem.json')
+        if os.path.exists(pk):
+            try:
+                for t in json.load(open(pk, encoding='utf-8')).get('tep', []):
+                    if not os.path.exists(os.path.join(GOC, t)) and not t.startswith(SINH_KHI_DUNG):
+                        loi.append(f'{thu_skill}/{s}/kem.json: tệp kèm `{t}` không có trong repo')
+            except ValueError:
+                pass  # JSON hỏng: báo ở bước kiểm JSON bên dưới
         if f'`{thu_skill}/{s}/`' not in claude:
             loi.append(f'CLAUDE.md: bảng "Việc nào, skill nào" thiếu {thu_skill}/{s}/')
     ten_skill = re.compile(r'(?<![\w/-])((?:[a-z]{2,4}-)?web-(?:designer|thiet-ke|trien-khai|ung-dung|thiet-lap))(?![\w/.-])')

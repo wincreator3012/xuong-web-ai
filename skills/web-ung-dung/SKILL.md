@@ -7,7 +7,7 @@ description: "Tầng ứng dụng của xưởng web AI (repo xuong-web-ai): web
 
 Đọc `CLAUDE.md`, `docs/QUY-TRINH-KY-THUAT.md` của repo `xuong-web-ai`; chuẩn chính: `chuan/06-du-lieu-bao-mat.md`, `chuan/05-ky-thuat.md`, `chuan/01-tu-van-giai-phap.md` mục 3-5; bài học từ web-app cũ của tác giả xưởng: `nghien-cuu/E-bai-hoc-web-app.md`.
 
-Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục; không gắn được thì vẫn làm theo các bước dưới, nói rõ công cụ kiểm của xưởng chưa chạy và khuôn, chuẩn chưa đọc được.
+Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của repo) thì nhờ người dùng gắn trước bằng nút thêm thư mục. Không gắn được (ví dụ người dùng đang dùng ứng dụng trên điện thoại) thì vẫn làm theo các bước dưới, dựa vào bản chụp chuẩn và phong cách trong `references/` của skill (danh sách và dấu gói ở `references/DONG-GOI.md`), nói rõ với người dùng là đang dựa vào bản chụp, công cụ kiểm của xưởng chưa chạy và khuôn chưa dùng được.
 
 ## Nguyên tắc chọn
 

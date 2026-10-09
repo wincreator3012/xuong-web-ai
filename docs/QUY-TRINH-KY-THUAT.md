@@ -16,7 +16,8 @@ Môi trường, lệnh, bản đồ tài nguyên, cấu trúc web và dự án, 
 | Khuôn web | `khuon/<id>/` (danh mục `khuon/README.md`) | 9 khuôn, 3 tầng kỹ thuật |
 | Phông tự lưu trữ | `fonts/` | Lora, Playfair Display, Be Vietnam Pro; SIL OFL |
 | Công cụ | `tools/` | mục 3 |
-| Skill nguồn | `skills/` | bản ở đây là gốc |
+| Dấu xưởng đã dựng, địa chỉ bản vẽ, danh mục tệp của lần dựng | `XUONG.json`, `BAN-DUNG.json` (gốc xưởng) | kiểm, cập nhật: `tools/ban-dung.py`; xưởng không nối git với bản vẽ |
+| Skill nguồn | `skills/` | bản ở đây là gốc duy nhất (SKILL.md, `kem.json`); gói cho tài khoản: `tools/dong-goi-skill.py`, ghi ra `Du an/_skill/` |
 | Nghiên cứu gốc | `nghien-cuu/` | 5 báo cáo, 07/10/2026 |
 | Đường dẫn riêng từng máy | `cau-hinh.json` (`tools/cai-dat.py` tạo từ `cau-hinh.mau.json`, không lên git) | `thuMucDuAn` = `../Du an`, `thuMucWeb` = `../Web` |
 
@@ -87,6 +88,8 @@ python3 tools/dua-len.py <tên-web> --noi cloudflare --that           # đưa l�
 python3 tools/tuong-phan.py                                          # kiểm tương phản mọi chủ đề màu
 python3 tools/kiem-sach.py [--xoa]                                   # cổng repo sạch
 python3 tools/kiem-tai-lieu.py                                       # cổng tài liệu, skill, khuôn của xưởng
+python3 tools/dong-goi-skill.py [<skill>] [--so <thư mục>]            # gói skill (.zip) để lưu vào tài khoản; --so: so lệch với bản đang cài
+python3 tools/ban-dung.py --kiem | --so-ban-ve | --doc-tho             # xưởng còn nguyên không; bản vẽ có gì mới; chép phần năng lực mới
 ```
 
 ## 4. Hồ sơ máy đọc
