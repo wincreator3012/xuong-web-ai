@@ -20,7 +20,7 @@ Xưởng được viết và kiểm chứng trên Claude; các ứng dụng khá
 |---|---|---|---|
 | **Claude Desktop** (chế độ Cowork) | người mới, muốn ít trục trặc nhất | [claude.ai/download](https://claude.ai/download) | Khuyên dùng. Cowork cần gói trả phí; có cho Mac và Windows. Claude làm việc với thư mục bạn gắn vào và tự lo phần máy móc phía sau |
 | **ChatGPT desktop** (có Codex) | người đang dùng ChatGPT | [chatgpt.com/download](https://chatgpt.com/download) | Dùng chế độ Codex (mở một thư mục rồi làm việc trong đó); khung chat thường không dựng được xưởng |
-| **Google Antigravity** | người quen sản phẩm Google, không ngại giao diện kiểu phần mềm lập trình | [antigravity.google](https://antigravity.google) | Mở thư mục làm dự án |
+| **Google Antigravity** | người quen sản phẩm Google, hoặc làm web-app trên nền tảng Google (Firebase) | [antigravity.google](https://antigravity.google) | Mở thư mục làm dự án; chạy lệnh và trình duyệt ngay trên máy, rất tiện khi khởi tạo và đưa web-app lên Firebase |
 | **Claude Code**, **Codex CLI**, Cursor... | người quen dòng lệnh, lập trình | trang của từng công cụ | Chạy thẳng trên máy |
 
 Giá, gói và tên gọi của các ứng dụng AI thay đổi nhanh; xem trang chính thức của từng hãng trước khi đăng ký.

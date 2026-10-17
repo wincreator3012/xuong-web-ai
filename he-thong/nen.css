@@ -71,6 +71,7 @@ a:hover { text-decoration-thickness: 2px; }
 ::selection { background: var(--nhan); color: var(--nhan-chu); }
 hr { border: 0; border-top: 1px solid var(--vien); margin: var(--kc-5) 0; }
 abbr[title] { text-decoration: underline dotted; }
+[hidden] { display: none !important; }
 .an-di {                     /* ẩn với mắt, vẫn đọc được bằng trình đọc màn hình */
   position: absolute !important; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;

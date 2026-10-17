@@ -48,9 +48,9 @@ Repo chỉ chứa năng lực. Không có ngoại lệ cho thư mục tạm tron
 
 ## 2. Nơi chạy lệnh
 
-- **Máy người dùng** (Mac hoặc Windows; với Claude Cowork, Claude chạm qua `device_bash` trong máy ảo Linux có gắn thư mục): đọc, sửa web và hồ sơ, `web-moi.py`, `kiem-web.py --khong-trinh-duyet`, `tuong-phan.py`, `kiem-sach.py`, `kiem-tai-lieu.py`. Máy ảo không có trình duyệt; có Node.js nhưng mạng có thể bị giới hạn. Người dùng xem thử web trên máy thật bằng `python3 tools/xem.py <web>` (hoặc bấm đúp `public/index.html` với web tĩnh).
-- **Sandbox đám mây** (`Bash`): kiểm bằng trình duyệt (Playwright + Chromium có sẵn, không chạy "playwright install"), dựng Astro (`npm`), ảnh chia sẻ, thử cấu hình (`npx wrangler deploy --dry-run`). Quy trình đưa lên, mang về: `skills/_chung/van-hanh.md` mục "Nơi chạy lệnh".
-- **Đưa web lên mạng thật** cần tài khoản của người dùng: cách thường ngày là nối kho GitHub với nơi lưu trữ (người dùng Commit, Push bằng GitHub Desktop); Firebase thì người dùng chạy lệnh `npx firebase-tools deploy` trên máy sau một lần đăng nhập (`huong-dan/05-firebase.md`).
+- **Máy người dùng** (Mac hoặc Windows; với Claude Cowork, Claude chạm qua `device_bash` trong máy ảo Linux có gắn thư mục; hoặc **Antigravity** / Claude Code chạy trực tiếp trên máy thật): đọc, sửa web và hồ sơ, `web-moi.py`, `kiem-web.py`, `tuong-phan.py`, `kiem-sach.py`, `kiem-tai-lieu.py`. Khi chạy trực tiếp bằng Antigravity trên máy đã cài Playwright + Chromium và Node.js 22 LTS, mọi bước kiểm bằng trình duyệt, chụp ảnh ba khổ và đưa lên mạng chạy ngay tại chỗ không cần qua sandbox. Người dùng xem thử web trên máy thật bằng `python3 tools/xem.py <web>` (hoặc bấm đúp `public/index.html` với web tĩnh).
+- **Sandbox đám mây** (`Bash`, khi dùng Claude Cowork): kiểm bằng trình duyệt (Playwright + Chromium có sẵn, không chạy "playwright install"), dựng Astro (`npm`), ảnh chia sẻ, thử cấu hình (`npx wrangler deploy --dry-run`). Quy trình đưa lên, mang về: `skills/_chung/van-hanh.md` mục "Nơi chạy lệnh".
+- **Đưa web lên mạng thật** cần tài khoản của người dùng: cách thường ngày cho web tĩnh là nối kho GitHub với nơi lưu trữ (người dùng Commit, Push bằng GitHub Desktop); với web-app trên nền tảng Google như **Firebase**, khi dùng **Antigravity** sau một lần `firebase login`, trợ lý tự động khởi tạo dự án, gắn tên miền `<mã-dự-án>.web.app`, tạo cơ sở dữ liệu Firestore, đăng ký ứng dụng web và chạy `firebase deploy` đưa thẳng cả luật bảo mật lẫn thư mục `public/` lên mạng (`huong-dan/05-firebase.md`).
 
 ### Khởi động phiên ở sandbox
 

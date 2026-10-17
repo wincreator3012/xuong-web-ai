@@ -27,7 +27,7 @@ Quy tắc: tên tệp chữ thường, không dấu, gạch nối (`bao-gia.html
 
 - `<html lang="vi">`, `meta viewport` (không chặn phóng to), `<title>`, `meta description`, Open Graph (`og:title`, `og:description`, `og:image` tuyệt đối 1200x630, `og:url`, `og:locale` = `vi_VN`).
 - Một `h1` mỗi trang; tiêu đề không nhảy bậc; vùng `header`, `main`, `footer`, `nav` đúng nghĩa; liên kết "Bỏ qua, tới nội dung".
-- Mỗi ô nhập có `<label>`; nút là `<button>`, liên kết là `<a>`; không `div` bấm được.
+- Mỗi ô nhập có `<label>`; nút là `<button>`, liên kết là `<a>`; không `div` bấm được. Trong web-app, các cụm ô nhập dùng cho đăng nhập email/mật khẩu, sửa tên hiển thị hay bộ lọc quản trị đặt trong `<div class="bieu-mau" role="group" aria-label="...">` kèm `<button type="button">` thay vì `<form>` (để không lẫn với biểu mẫu thu thông tin khách hàng cần ô đồng ý và bẫy rác). Khi dùng thanh chuyển thẻ `role="tablist"`, mọi nút con có `aria-selected` bắt buộc có `role="tab"`.
 - Dữ liệu có cấu trúc (JSON-LD) theo loại: Person/ProfilePage (hồ sơ), Event (sự kiện), Organization, Article (bài viết), Course khi phù hợp. Google không cần tệp hay schema riêng cho tìm kiếm AI; `llms.txt` không bắt buộc.
 - JavaScript là lớp nâng cấp: trang vẫn đọc đủ khi JS không chạy (trừ công cụ tương tác, khi đó có `<noscript>` giải thích). Không gắn mã vào thuộc tính `onclick`, `onsubmit` (chính sách bảo mật nội dung chặn).
 
@@ -39,7 +39,7 @@ Quy tắc: tên tệp chữ thường, không dấu, gạch nối (`bao-gia.html
 | INP (độ nhạy khi tương tác) | dưới 200 ms | thư viện JS nặng (trang tĩnh gần như luôn đạt) |
 | CLS (bố cục giật) | dưới 0,1 | ảnh thiếu `width` `height`, phông thay thế lệch cỡ |
 
-Ngân sách: trang dưới 1,5 MB lần tải đầu, ảnh đơn dưới 350 KB, không thư viện JS khi JS thuần đủ. Phông `font-display: swap`, tách tệp con theo `unicode-range` (đã sẵn trong `fonts/`). Thư viện được phép qua CDN khi thật cần: Chart.js (biểu đồ), Fuse.js (tìm mờ), Firebase SDK (bậc 3).
+Ngân sách: trang dưới 1,5 MB lần tải đầu, ảnh đơn dưới 350 KB, không thư viện JS khi JS thuần đủ. Phông `font-display: swap`, tách tệp con theo `unicode-range` (đã sẵn trong `fonts/`). Với web-app có chính sách bảo mật nội dung chặt (`script-src 'self' https://www.gstatic.com https://apis.google.com`), ưu tiên viết các mô-đun ES tự chủ ngay trong `public/assets/js/` để vẽ biểu đồ (SVG và Canvas 2D), xuất tệp PDF khổ A4 từ Canvas và đóng gói tệp Excel `.xlsx` chuẩn OpenXML mà không phụ thuộc CDN bên thứ ba.
 
 ## 4. Khả năng tiếp cận: WCAG 2.2 AA (ISO/IEC 40500:2025)
 
@@ -64,4 +64,4 @@ Sáu lỗi phổ biến nhất trên web thế giới năm 2026 (WebAIM Million:
 
 - Web tĩnh: không cần cài gì; xem thử bằng `python3 tools/xem.py <web>`.
 - Astro 7: Node.js 22.12 trở lên. Dặn trợ lý AI viết theo Astro 7 (docs.astro.build), vì dữ liệu huấn luyện của nhiều mô hình dừng ở Astro 4-5. Tắt đổi dấu tự động trong Markdown (`markdown.smartypants: false`, khuôn đã đặt) để giữ nháy thẳng và ba chấm gõ tay.
-- Firebase: SDK bản module 12.x qua CDN gstatic, không cần bước dựng; công cụ dòng lệnh `firebase-tools` qua `npx`.
+- Firebase: SDK bản module 12.x qua CDN gstatic, không cần bước dựng; công cụ dòng lệnh `firebase-tools` (cài toàn cục hoặc chạy qua `npx`). Khi dùng Antigravity, trợ lý khởi tạo dự án, cơ sở dữ liệu Firestore, luật bảo mật và đưa web-app lên `<mã-dự-án>.web.app` ngay trên máy.

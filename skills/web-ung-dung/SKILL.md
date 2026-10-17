@@ -34,10 +34,10 @@ Luôn bậc thấp nhất đủ dùng. Trước khi lên bậc 3, hỏi: một f
 ### Web-app đăng nhập + dữ liệu (khuôn `app-firebase`, bậc 3)
 
 1. Đặc tả trước: ai dùng, vai trò nào thấy gì, dữ liệu gì, giữ bao lâu; ghi BRIEF.md.
-2. **Luật trước giao diện:** viết `firestore.rules` theo mẫu của khuôn (mặc định cấm; chủ sở hữu theo `uid`; kiểm từng trường; quản trị qua `quanTri/<email>` + `email_verified`); giải thích từng khối bằng lời thường cho người dùng.
-3. Dựng giao diện: JS thuần + Firebase SDK module qua CDN, hiện dữ liệu bằng `textContent`; giữ lá chắn trình duyệt Zalo/Facebook; lưu ngầm với phiên làm việc dài.
-4. Điểm, đáp án, tiền, gửi thư: tính ở máy chủ (Cloud Functions, gói Blaze có giới hạn chi), không trong trình duyệt.
-5. Dẫn người dùng `huong-dan/05-firebase.md`; chạy `kiem-web.py --len`; làm `KIEM-BAO-MAT.md` cùng chủ web (hai tài khoản, thử khi chưa đăng nhập) trước khi mời người dùng thật.
+2. **Luật trước giao diện:** viết `firestore.rules` theo mẫu của khuôn (mặc định cấm; chủ sở hữu theo `uid`; kiểm từng trường bằng `keys().hasOnly`, kiểu, độ dài; quản trị qua `quanTri/<email>` hoặc kiểm email chủ đã xác minh `email_verified == true` kèm `mods/{uid}`); giải thích từng khối bằng lời thường cho người dùng.
+3. Dựng giao diện: JS thuần + Firebase SDK module qua CDN, hiện dữ liệu bằng `textContent`; giữ lá chắn trình duyệt Zalo/Facebook. Vì CSP khoá chặt (`script-src 'self' https://www.gstatic.com https://apis.google.com`), viết các mô-đun vẽ biểu đồ (SVG và Canvas 2D), xuất PDF khổ A4 và xuất Excel `.xlsx` chuẩn OpenXML ngay trong `public/assets/js/` thay vì gọi CDN lạ. Các khung đăng nhập email/mật khẩu hoặc bộ lọc quản trị dùng `<div class="bieu-mau" role="group">` kèm `<button type="button">` (không bọc `<form>` để tránh nhầm với biểu mẫu thu thông tin khách hàng).
+4. Điểm, đáp án, tiền, gửi thư: bài thi có đáp án đúng sai hoặc tính tiền phải chấm ở máy chủ (Cloud Functions, gói Blaze có giới hạn chi). Với **bài tự đánh giá phản tư [self-assessment]** không có đúng sai, cho phép tính điểm trên trình duyệt để cả Khách chưa đăng nhập vẫn dùng trọn vẹn, nhưng khi trang quản trị hiển thị hoặc xuất Excel phải **tính lại điểm từ câu trả lời thô (`answers`)** bằng đúng công thức gốc.
+5. Khi chạy trong **Antigravity** (hoặc trợ lý chạy trên máy người dùng đã đăng nhập `firebase login`), chủ động dùng `firebase-tools` tạo dự án, gắn tên miền `<mã-dự-án>.web.app`, khởi tạo Firestore `asia-southeast1`, đăng ký ứng dụng web điền `firebase-cau-hinh.js` và chạy `firebase deploy` (`huong-dan/05-firebase.md`); người dùng chỉ cần bật công tắc phương thức đăng nhập (Google, Email/Password) trong bảng điều khiển Firebase. Chạy `kiem-web.py --len`; làm `KIEM-BAO-MAT.md` cùng chủ web trước khi mời người dùng thật.
 6. Supabase chỉ khi cần SQL thật: RLS mọi bảng, không `sb_secret_` trong trình duyệt, lưu ý tạm dừng sau 7 ngày yên ắng.
 
 ### Rà an toàn web-app có sẵn

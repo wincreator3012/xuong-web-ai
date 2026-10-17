@@ -23,11 +23,11 @@ Mặc định Cloudflare; web-app Firebase dùng Firebase Hosting; Vercel chỉ 
 
 `python3 tools/dua-len.py <web> --noi <nơi>`: tạo cấu hình (chỉ đưa `public/` hoặc `dist/`), dựng Astro nếu cần, chạy `kiem-web.py --len`. Chưa ĐẠT thì quay lại sửa (chỗ trống `[[...]]`, ảnh chờ, khoá form, ảnh chia sẻ).
 
-### 4. Dẫn người dùng làm phần tự tay
+### 4. Dẫn người dùng làm phần tự tay (hoặc tự động hoá trên máy khi dùng Antigravity)
 
 Theo thứ tự: `huong-dan/00-tai-khoan-goc.md` (nếu chưa), `01-github.md`, rồi thẻ của nơi lưu trữ (02 Cloudflare, 03 Vercel, 04 Netlify, 05 Firebase). Một bước mỗi lượt; nói đúng chữ trên màn hình; không bao giờ xin mật khẩu, mã xác thực, khoá bí mật; giao diện khác thẻ thì tra tài liệu chính thức và dẫn theo màn hình thật, sửa thẻ sau phiên. Có trình duyệt dựng sẵn hoặc Claude in Chrome: mở đúng trang, chỉ chỗ bấm; người dùng tự đăng nhập, tự xác nhận.
 
-Cách thường ngày: nối kho GitHub với nơi lưu trữ một lần; mỗi lần người dùng Commit, Push thì web tự cập nhật. Đưa thẳng bằng dòng lệnh (`dua-len.py --that`) chỉ khi chạy trên máy người dùng đã đăng nhập công cụ, hoặc người dùng chủ động tạo mã truy cập quyền tối thiểu.
+Cách thường ngày cho web tĩnh: nối kho GitHub với nơi lưu trữ một lần; mỗi lần người dùng Commit, Push thì web tự cập nhật. Khi dùng **Antigravity** (hoặc trợ lý chạy trực tiếp trên máy người dùng) để đưa lên các nền tảng của Google như **Firebase**, sau một lần `firebase login`, trợ lý tự động tạo dự án, gắn tên miền `<mã-dự-án>.web.app`, tạo cơ sở dữ liệu Firestore, đăng ký ứng dụng web và chạy `firebase deploy` đưa thẳng cả luật bảo mật lẫn thư mục `public/` lên mạng (người dùng chỉ cần bật công tắc phương thức đăng nhập trong bảng điều khiển Firebase). Đưa thẳng bằng dòng lệnh (`dua-len.py --that`) chỉ khi chạy trên máy người dùng đã đăng nhập công cụ, hoặc người dùng chủ động tạo mã truy cập quyền tối thiểu.
 
 ### 5. Tên miền, DNS, email
 

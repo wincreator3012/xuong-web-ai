@@ -7,18 +7,18 @@ Phần này chia hai loại việc: việc máy làm (`tools/dua-len.py`, Claude
 | Nơi | Chọn khi | Không chọn khi | Thẻ hướng dẫn |
 |---|---|---|---|
 | **Cloudflare** (Workers, tệp tĩnh) | MẶC ĐỊNH cho web tĩnh và Astro: miễn phí, được dùng thương mại, băng thông tệp tĩnh không giới hạn, có máy chủ ở Hà Nội và TP.HCM, đặt được lớp bảo vệ HTTP | người dùng không chịu chuyển máy chủ tên miền [nameserver] sang Cloudflare (bắt buộc khi gắn tên miền riêng) | huong-dan/02-cloudflare.md |
-| **Firebase Hosting** | web-app đã dùng Firebase (đăng nhập, Firestore): cùng dự án, một lệnh đưa lên | web tĩnh thuần lượng xem lớn (gói Spark 10 GB/tháng) | huong-dan/05-firebase.md |
+| **Firebase Hosting** | web-app đã dùng Firebase (đăng nhập, Firestore): cùng dự án, một lệnh đưa lên; đặc biệt thuận tiện khi làm việc trong **Antigravity** vì trợ lý khởi tạo dự án, gắn tên miền `<mã-dự-án>.web.app`, tạo Firestore và đưa lên mạng trực tiếp trên nền tảng Google | web tĩnh thuần lượng xem lớn (gói Spark 10 GB/tháng) | huong-dan/05-firebase.md |
 | **Vercel** | web cá nhân phi thương mại, người dùng đã quen Vercel | web có bán hàng, quảng bá dịch vụ trả phí (gói Hobby cấm thương mại; Pro 20 USD/tháng) | huong-dan/03-vercel.md |
 | **Netlify** | web ít sửa cần form có sẵn | web sửa nhiều (gói Free khoảng 20 lần đưa bản chính thức/tháng; hết tín dụng thì mọi web trong tài khoản tạm dừng) | huong-dan/04-netlify.md |
 | **GitHub Pages** | trang cá nhân, tài liệu công khai | web thương mại, kho riêng tư (cần GitHub trả phí), cần lớp bảo vệ HTTP | huong-dan/01-github.md |
 
 Web đã chạy ở nơi khác (ví dụ Vercel) mà đang ổn: không bắt chuyển; chỉ cảnh báo khi vi phạm điều khoản (web thương mại trên Vercel Hobby).
 
-## 2. Cách đưa lên: nối kho git là cách thường ngày
+## 2. Cách đưa lên: nối kho git hoặc chạy trực tiếp từ trợ lý trên máy
 
 1. **Lần đầu (người dùng tự làm, Claude hướng dẫn từng bước):** tạo tài khoản GitHub và nơi lưu trữ, tạo kho cho web, nối kho với nơi lưu trữ. Từ đó mỗi lần đẩy [push] lên nhánh `main` là web tự cập nhật sau khoảng một phút.
 2. **Mỗi lần sửa:** Claude sửa, chạy `tools/kiem-web.py <web>`, người dùng duyệt, rồi lưu thay đổi [commit] và đẩy lên (người dùng tự commit, hoặc cho phép Claude làm trong phiên đó).
-3. **Đưa thẳng bằng dòng lệnh** (khi chưa nối git, hoặc trợ lý chạy trên máy người dùng): `python3 tools/dua-len.py <web> --noi cloudflare --that`. Công cụ tạo cấu hình, chạy cổng kiểm `--len`, rồi mới gọi `wrangler deploy` (hoặc `vercel`, `netlify`, `firebase deploy`). Lần đầu cần đăng nhập trên trình duyệt, hoặc mã truy cập [API token] quyền tối thiểu trong biến môi trường; không bao giờ ghi mã vào tệp.
+3. **Đưa thẳng bằng dòng lệnh** (khi dùng **Antigravity**, Claude Code hoặc trợ lý chạy trực tiếp trên máy người dùng): với các nền tảng của Google như Firebase, chỉ cần đăng nhập `firebase login` một lần, trợ lý có thể tự tạo dự án, khởi tạo cơ sở dữ liệu Firestore, đăng ký ứng dụng web và chạy `firebase deploy` đưa cả luật bảo mật lẫn thư mục `public/` lên `<mã-dự-án>.web.app`; hoặc dùng `python3 tools/dua-len.py <web> --noi cloudflare --that`. Công cụ luôn chạy cổng kiểm `--len` trước khi đưa lên; không bao giờ ghi mã truy cập vào tệp.
 4. **Chỉ thư mục công khai được đưa lên** (`public/`, Astro: `dist/`). Cấu hình do dua-len.py tạo đều trỏ đúng thư mục này.
 
 ## 3. Tên miền

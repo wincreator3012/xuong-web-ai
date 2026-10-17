@@ -83,6 +83,6 @@ Cùng tác giả, cùng cách làm: **Xưởng thiết kế Claude** (repo `xuon
 
 ## Tác giả, giấy phép
 
-Xưởng do nhà giáo dục Lương Dũng Nhân (ldn.edu.vn) tạo ra và chia sẻ miễn phí. Mã nguồn theo MIT (`LICENSE`), tài liệu theo CC BY 4.0 (`LICENSE-TAI-LIEU.md`), cách ghi công ở `GHI-CONG.md`. Thành phần bên thứ ba: phông chữ SIL OFL 1.1, axe-core của Deque Systems (MPL 2.0). Cập nhật lần cuối: 09/10/2026 (`CHANGELOG.md`).
+Xưởng do nhà giáo dục Lương Dũng Nhân (ldn.edu.vn) tạo ra và chia sẻ miễn phí. Mã nguồn theo MIT (`LICENSE`), tài liệu theo CC BY 4.0 (`LICENSE-TAI-LIEU.md`), cách ghi công ở `GHI-CONG.md`. Thành phần bên thứ ba: phông chữ SIL OFL 1.1, axe-core của Deque Systems (MPL 2.0). Cập nhật lần cuối: 17/10/2026 (`CHANGELOG.md`).
 
 Trang web đầu tiên bạn muốn người xem mở ra, sau khi có xưởng, sẽ nói thay bạn điều gì?
