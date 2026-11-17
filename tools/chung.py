@@ -191,6 +191,8 @@ TU_NEN_TRANH_CHUNG = [
     (r'(?i)\bkhông chỉ\b[^.!?]{0,80}\bmà còn\b', 'đối ngẫu "không chỉ... mà còn": tối đa một lần cả trang'),
     (r'[“”]', 'dấu nháy cong: dùng nháy thẳng "..."'),
     (r'(?i)\b(click vào đây|bấm vào đây|submit)\b', 'chữ trên nút, liên kết: động từ cụ thể nói điều sẽ xảy ra'),
+    (r'(?:^|[.!?]\s+)[^.:!?\n]{2,45}: [^.:!?\n]{2,45}: \S',
+     'chuỗi nhãn nối bằng nhiều dấu hai chấm ("Vì đâu: mức tải cao nhất: ..."): viết thành câu đủ chủ ngữ, vị ngữ'),
 ]
 
 

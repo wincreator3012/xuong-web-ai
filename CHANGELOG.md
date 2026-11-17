@@ -2,6 +2,21 @@
 
 Trợ lý AI đọc tệp này khi người dùng nói "cập nhật xưởng": từ phiên bản ghi trong `XUONG.json` của xưởng tới bản mới nhất, để kể bằng lời thường điều gì mới và điều gì sẽ đổi. Mỗi mục ghi: phiên bản (năm.tháng.ngày), thay đổi, việc trợ lý cần làm trong xưởng đã dựng, dữ kiện đã kiểm chứng lại.
 
+## 2026.11.17
+
+Thêm bậc 4 (web-app có trí năng nhân tạo) và cách soát chữ trong mã của web-app.
+
+- **Chuẩn mới `chuan/10-ung-dung-ai.md`**: web-app mà máy chủ gọi mô hình Claude để viết phản hồi riêng cho từng người dùng. Gồm: khi nào cần, đặc tả và nhật ký quyết định, kiến trúc mặc định (lõi TypeScript thuần, Cloud Functions, luật Firestore chỉ cho đọc, React + Vite), gọi Claude bằng `output_config`, rào chắn bằng mã, bảo vệ prompt bằng mã hóa trong git, chi phí và hạn mức, việc chạy nền, quyền và đồng ý, bảo mật, đưa lên tự động bằng GitHub Actions và Workload Identity Federation, kiểm thử ba tầng, đợt thử nghiệm với người dùng thật.
+- **Năm bậc hạ tầng** (`chuan/01`): thêm bậc 4 vào bảng và cây quyết định; bậc 4 là ngoại lệ có lý do của quy ước không dùng React.
+- **`chuan/06`, `chuan/07`**: khóa Anthropic thuộc loại khóa bí mật; thêm cách đưa lên tự động cho web-app có Cloud Functions.
+- **Chữ trong web-app** (`chuan/04` mục 9, `tools/kiem-web.py`, `tools/chung.py`): kiem-web quét cả chuỗi chữ Việt trong tệp .js tự viết và bắt chuỗi nhãn nối bằng dấu hai chấm.
+- **Skill**: `web-ung-dung` thêm quy trình bậc 4 và 2 quy tắc cứng, tài liệu kèm có `chuan/10`; `web-trien-khai` thêm cách đưa lên tự động và 1 quy tắc cứng; `web-thiet-ke` nhận bậc hạ tầng 0 đến 4.
+- **`docs/BAI-HOC.md`**: mục mới "Ứng dụng có trí năng nhân tạo", cùng các bài học về máy giả lập Firebase, Playwright và những cái bẫy khi đưa Cloud Functions lên.
+
+Việc trong xưởng đã dựng: trợ lý chạy `python3 tools/ban-dung.py --so-ban-ve`, cập nhật các tệp năng lực theo `DUNG-XUONG.md` mục "Cập nhật xưởng", rồi đóng gói lại ba skill `web-ung-dung`, `web-trien-khai`, `web-thiet-ke` nếu người dùng đã lưu skill lên tài khoản.
+
+Dữ kiện kiểm chứng lại: Claude Sonnet 5.5 và Opus 5.5 trả JSON qua `output_config.format` (json_schema) và không nhận `tool_choice` ép công cụ; GitHub Actions đăng nhập Google Cloud bằng Workload Identity Federation và đưa Cloud Functions thế hệ 2 lên (kiểm 17/11/2026 trên một dự án thật).
+
 ## 2026.10.17
 
 Bổ sung kinh nghiệm dựng web-app tự đánh giá [self-assessment] và quy trình đưa lên Firebase tự động khi dùng Google Antigravity.

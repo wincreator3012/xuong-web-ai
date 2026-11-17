@@ -39,7 +39,7 @@ Nhóm D, vận hành:
 
 Lượt hỏi gợi ý: lượt 1 câu 1-4; lượt 2 câu 5, 8-10; lượt 3 câu 11-15 (bỏ câu đã rõ).
 
-## 3. Bốn bậc hạ tầng
+## 3. Năm bậc hạ tầng
 
 | Bậc | Là gì | Dữ liệu nằm ở đâu | Ví dụ | Khuôn |
 |---|---|---|---|---|
@@ -47,8 +47,9 @@ Lượt hỏi gợi ý: lượt 1 câu 1-4; lượt 2 câu 5, 8-10; lượt 3 c�
 | 1 | tĩnh + dịch vụ nhúng | ở dịch vụ bên ngoài (Web3Forms, Tally, Cal.com, VietQR) | trang đích có đăng ký và mã chuyển khoản, báo giá, blog | `landing`, `bao-gia`, `site-astro` |
 | 2 | backend nhẹ | Google Sheets qua Apps Script, hoặc một hàm nhỏ (Cloudflare Worker) | form tự thiết kế ghi thẳng vào Sheets, gửi thư xác nhận, nhận webhook thanh toán | `landing` + chuan/06 mục 2 |
 | 3 | đăng nhập + cơ sở dữ liệu | Firebase (mặc định), Supabase khi cần SQL | sổ ghi chép học viên, bảng điều khiển nội bộ, bài thi | `app-firebase` |
+| 4 | bậc 3 + máy chủ gọi mô hình trí năng nhân tạo | Firebase (Firestore, Cloud Functions, Secret Manager), Claude API | người đồng hành phản tư, trợ lý soạn thảo, bảng phân tích cá nhân (ca gốc 11/2026) | chưa có khuôn; dựng theo chuan/10 |
 
-Mỗi bậc lên là thêm tài khoản phải giữ, thêm chỗ có thể rò dữ liệu, thêm việc bảo trì. Bậc 3 bắt buộc làm đủ danh sách kiểm bảo mật của khuôn app trước khi có người dùng thật.
+Mỗi bậc lên là thêm tài khoản phải giữ, thêm chỗ có thể rò dữ liệu, thêm việc bảo trì. Bậc 3 bắt buộc làm đủ danh sách kiểm bảo mật của khuôn app trước khi có người dùng thật; bậc 4 thêm toàn bộ chuan/10 (chi phí mô hình, rào chắn, prompt, đồng ý).
 
 ## 4. Cây quyết định "giải pháp đơn giản nhất"
 
@@ -57,8 +58,9 @@ Mỗi bậc lên là thêm tài khoản phải giữ, thêm chỗ có thể rò 
 3. Một trang tĩnh có đủ không? Đủ: bậc 0.
 4. Chỉ cần nhận dữ liệu: biểu mẫu nhúng (bậc 1) trước, Apps Script (bậc 2) sau.
 5. Chỉ khi cần đăng nhập, dữ liệu riêng của nhiều người, phân quyền: bậc 3.
+6. Chỉ khi người dùng cần phản hồi do trí năng nhân tạo viết riêng cho lời của họ, lặp lại nhiều lần, có dữ liệu tích lũy: bậc 4 (chuan/10 mục 1 nói rõ khi nào chưa cần).
 
-Tầng kỹ thuật (chốt khi dựng xưởng 07/10/2026, bậc thang ba tầng): HTML tĩnh dùng nền chung là mặc định cho đa số; Astro 7 khi web có trên khoảng 10 trang cùng cấu trúc hoặc có blog; Firebase khi có đăng nhập và dữ liệu. Không dùng React, Next.js, Tailwind cho web mới trừ khi chủ web có lý do rõ (đã có đội kỹ thuật, đã có mã cũ).
+Tầng kỹ thuật (chốt khi dựng xưởng 07/10/2026, bậc thang ba tầng): HTML tĩnh dùng nền chung là mặc định cho đa số; Astro 7 khi web có trên khoảng 10 trang cùng cấu trúc hoặc có blog; Firebase khi có đăng nhập và dữ liệu. Không dùng React, Next.js, Tailwind cho web mới trừ khi chủ web có lý do rõ (đã có đội kỹ thuật, đã có mã cũ). Bậc 4 là ngoại lệ có lý do: luồng nhiều chặng, nhiều trạng thái, dùng chung kiểu dữ liệu với máy chủ, nên dùng React + Vite + TypeScript và Cloud Functions (chuan/10 mục 3).
 
 ## 5. Ma trận nhu cầu và giải pháp
 

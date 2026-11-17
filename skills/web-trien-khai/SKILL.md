@@ -29,6 +29,8 @@ Theo thứ tự: `huong-dan/00-tai-khoan-goc.md` (nếu chưa), `01-github.md`, 
 
 Cách thường ngày cho web tĩnh: nối kho GitHub với nơi lưu trữ một lần; mỗi lần người dùng Commit, Push thì web tự cập nhật. Khi dùng **Antigravity** (hoặc trợ lý chạy trực tiếp trên máy người dùng) để đưa lên các nền tảng của Google như **Firebase**, sau một lần `firebase login`, trợ lý tự động tạo dự án, gắn tên miền `<mã-dự-án>.web.app`, tạo cơ sở dữ liệu Firestore, đăng ký ứng dụng web và chạy `firebase deploy` đưa thẳng cả luật bảo mật lẫn thư mục `public/` lên mạng (người dùng chỉ cần bật công tắc phương thức đăng nhập trong bảng điều khiển Firebase). Đưa thẳng bằng dòng lệnh (`dua-len.py --that`) chỉ khi chạy trên máy người dùng đã đăng nhập công cụ, hoặc người dùng chủ động tạo mã truy cập quyền tối thiểu.
 
+Web-app bậc 4 (Cloud Functions, prompt mã hóa): đưa lên tự động bằng GitHub Actions và Workload Identity Federation theo `chuan/10-ung-dung-ai.md` mục 11. Claude dựng cấu hình bằng `gcloud` (pool, provider chỉ nhận đúng kho và nhánh `main`, tài khoản dịch vụ riêng với đúng vai trò cần) và tệp workflow (kiểm thử, giải mã prompt, dựng, thử lại khi đưa lên lỗi, mở quyền gọi cho hàm phía trình duyệt, gọi thử trang chủ); người dùng tự tạo kho riêng tư, tự bấm cấp quyền, tự nhập khóa vào Secret Manager. Sau mỗi lần đẩy, theo dõi lượt chạy (`gh run list`, `gh run view`) đến khi xanh rồi mới báo xong; Cloud Shell với một tập lệnh là đường dự phòng.
+
 ### 5. Tên miền, DNS, email
 
 `huong-dan/06-ten-mien.md` (chọn đuôi, mua; .edu.vn chỉ cho tổ chức giáo dục; luôn hỏi giá gia hạn), `07-dns.md` (chép đúng giá trị nơi lưu trữ hiện ra; chép lại mọi bản ghi cũ, nhất là MX, trước khi đổi nameserver), `08-email-ten-mien.md`. Tên miền chạy rồi: `python3 tools/dua-len.py <web> --ten-mien https://...`, kiểm lại, người dùng Push.
@@ -49,3 +51,4 @@ Sửa định kỳ qua web-thiet-ke; gia hạn, dữ liệu hết hạn giữ, r
 4. Chép giá trị DNS từ màn hình của nơi lưu trữ, không từ trí nhớ hay bài cũ.
 5. Không khẳng định giá, hạn mức mà chưa kiểm lại khi số liệu trong `chuan/kho-dich-vu.json` đã cũ hơn 6 tháng.
 6. Không tự commit, push, mua, xoá tài nguyên trên dịch vụ của người dùng khi người dùng chưa cho phép trong phiên.
+7. Bậc 4: không lưu khóa tài khoản dịch vụ trên GitHub; đăng nhập Google Cloud bằng Workload Identity Federation. Dự án có hai chủ (một tài khoản dự phòng), cả hai bật xác thực hai lớp.

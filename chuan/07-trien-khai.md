@@ -20,6 +20,7 @@ Web đã chạy ở nơi khác (ví dụ Vercel) mà đang ổn: không bắt ch
 2. **Mỗi lần sửa:** Claude sửa, chạy `tools/kiem-web.py <web>`, người dùng duyệt, rồi lưu thay đổi [commit] và đẩy lên (người dùng tự commit, hoặc cho phép Claude làm trong phiên đó).
 3. **Đưa thẳng bằng dòng lệnh** (khi dùng **Antigravity**, Claude Code hoặc trợ lý chạy trực tiếp trên máy người dùng): với các nền tảng của Google như Firebase, chỉ cần đăng nhập `firebase login` một lần, trợ lý có thể tự tạo dự án, khởi tạo cơ sở dữ liệu Firestore, đăng ký ứng dụng web và chạy `firebase deploy` đưa cả luật bảo mật lẫn thư mục `public/` lên `<mã-dự-án>.web.app`; hoặc dùng `python3 tools/dua-len.py <web> --noi cloudflare --that`. Công cụ luôn chạy cổng kiểm `--len` trước khi đưa lên; không bao giờ ghi mã truy cập vào tệp.
 4. **Chỉ thư mục công khai được đưa lên** (`public/`, Astro: `dist/`). Cấu hình do dua-len.py tạo đều trỏ đúng thư mục này.
+5. **Web-app có Cloud Functions (bậc 4):** đưa lên tự động bằng GitHub Actions mỗi lần đẩy `main`, đăng nhập Google Cloud bằng Workload Identity Federation (chỉ nhận đúng kho, đúng nhánh; không lưu khóa tài khoản dịch vụ trên GitHub); bước đưa lên chạy kiểm thử trước, thử lại khi lỗi, mở quyền gọi cho hàm phía trình duyệt, gọi thử trang chủ. Các bước và bẫy đã gặp: chuan/10 mục 11. Cloud Shell với một tập lệnh là đường dự phòng.
 
 ## 3. Tên miền
 

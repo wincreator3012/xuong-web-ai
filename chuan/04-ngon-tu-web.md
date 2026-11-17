@@ -39,6 +39,8 @@ Máy (`tools/kiem-web.py`) chỉ bắt phần nổi (từ, cụm, dấu câu, Ti
 | Thông báo lỗi | ngắn, nói cách sửa, không đổ lỗi | "Số điện thoại cần 10 chữ số, ví dụ 0903 123 456." | "Dữ liệu không hợp lệ" |
 | Trạng thái | báo điều đang xảy ra và điều tiếp theo | "Đã nhận đăng ký. Thư xác nhận gửi trong 24 giờ làm việc." | "Thành công!" |
 | Chân trang | thông tin, không khẩu hiệu | tên chủ quản, email, điện thoại, người chịu trách nhiệm nội dung | |
+| Mô tả chia sẻ, chữ trên ảnh chia sẻ | một câu trọn vẹn: trang giúp người đọc nhận ra điều gì, làm được gì | "Bài tự đánh giá nhanh giúp bạn nhìn ra mình đang có các dấu hiệu khét não ở mức nào, vì đâu mà ra nông nỗi ấy, và có thể giảm thiểu bằng cách nào." | "5 phút để biết vì đâu mà khét, nhờ đâu mà đỡ" |
+| Kết quả trắc nghiệm, thông báo trong web-app | câu đủ chủ ngữ, vị ngữ; gọi đúng tên chỉ số, khái niệm của mô hình | "Số luồng việc AI bạn phải theo dõi cùng một lúc là phần tải nặng nhất với bạn (3,0 trên 4)." | "Vì đâu: mức tải cao nhất: mức song song" |
 
 ## 4. Gạch đầu dòng hay văn xuôi
 
@@ -72,3 +74,40 @@ Máy (`tools/kiem-web.py`) chỉ bắt phần nổi (từ, cụm, dấu câu, Ti
 - [ ] Đọc to từng phần: câu nào người Việt không nói như vậy thì viết lại.
 - [ ] Mỗi con số, lời chứng thực, tên đơn vị, mô hình của người khác có nguồn, có ghi công.
 - [ ] Mở đầu trả lời "ai, làm gì, cho ai" trong 5 giây; kết bằng câu hỏi mở thật hoặc lời mời.
+- [ ] Mô tả chia sẻ, nhãn tóm tắt, lời diễn giải kết quả, khuyến nghị: câu trọn vẹn, không chuỗi nhãn nối bằng dấu hai chấm, không khẩu ngữ rút gọn, không lối dịch từ tiếng Anh (mục 9).
+- [ ] Chữ hiển thị nằm trong tệp JS (câu hỏi, lời diễn giải, khuyến nghị của web-app) đã được đọc soát như chữ trong HTML: kiem-web có quét, nhưng chỉ bắt phần nổi.
+
+## 9. Câu trọn vẹn ở chỗ chật, và bài học hiệu đính
+
+Những chỗ chữ phải ngắn (mô tả chia sẻ, chữ trên ảnh chia sẻ, nhãn tóm tắt, lời diễn giải kết quả trắc nghiệm, thông báo trong web-app) là nơi văn AI hay rút thành cụm cụt. Ngắn không có nghĩa là cụt: người đọc phải hiểu ngay, không phải đoán. Mục này rút từ một đợt hiệu đính chữ của web-app trắc nghiệm sau khi đã đưa lên mạng (09/11/2026).
+
+**Câu trọn vẹn**
+
+- Lời diễn giải viết thành câu đủ chủ ngữ, vị ngữ. Không xâu chuỗi nhãn bằng nhiều dấu hai chấm ("Vì đâu: mức tải cao nhất: mức song song"): chuyên gia đọc còn khó hiểu, người thường càng không hiểu.
+- Không lược chủ ngữ tùy tiện: "tối nằm xuống vẫn chạy theo các luồng việc" thành "tối nằm xuống mà đầu óc vẫn chạy theo các luồng việc".
+- Gọi sản phẩm, khái niệm bằng tên đầy đủ, nhất là ở câu mở đầu và mô tả chia sẻ: "Bài tự đánh giá nhanh này", "các dấu hiệu khét não"; không rút thành khẩu ngữ nôm na ("vì đâu mà khét, nhờ đâu mà đỡ").
+- Nhãn tóm tắt dùng đúng danh từ của mô hình: "Nguồn lực bạn còn thiếu", không "Điều nâng đỡ bạn còn thiếu".
+- Động từ cần bổ ngữ thì viết đủ: "góp kết quả cho nghiên cứu", không "góp cho nghiên cứu".
+
+**Lối dịch từ tiếng Người dùng hay gặp trên web, web-app**
+
+| Tránh | Dùng |
+|---|---|
+| điều cần thay đổi là cách công việc được sắp đặt | điều cần thay đổi là cách sắp đặt công việc |
+| 3. Khi bạn chọn chia sẻ, những gì được lưu | 3. Khi bạn chọn chia sẻ, những dữ liệu được lưu gồm: |
+| Trang này nói rõ điều đó nghĩa là gì. | Trang này cáo bạch cách chúng tôi sử dụng dữ liệu. |
+| Câu 27-28 hỏi mức độ đúng. | Câu 27-28 hỏi mức độ ăn khớp (với phát biểu tự soi chiếu). |
+
+**Sắc thái, nhất quán, độ tin cậy**
+
+- Không dùng từ mang nghĩa tốt để đặt tên một chiều đo sự quá tải, hao tổn: "Độ liên tục" (làm việc kéo dài, không có điểm nghỉ), không "Độ liền mạch" (trôi chảy, thông suốt).
+- Chiều phân tích của một khái niệm gọi là "phương diện": "tải giám sát xét từ 4 phương diện", không "4 mặt".
+- Không để từ đơn âm đứng cụt cuối câu, cuối cụm: "quản lý đội ngũ", "vai trò nâng đỡ đội nhóm", không "quản lý đội".
+- Một thuật ngữ, một cách gọi trên cả trang: phần số liệu đã viết "lỗi nghiêm trọng" thì sơ đồ cũng viết "lỗi nghiêm trọng", không đổi thành "lỗi lớn".
+- Không tự hạ độ tin cậy: "Ngưỡng phân mức sẽ được hiệu chỉnh khi có dữ liệu nghiên cứu sâu hơn", không "Ngưỡng phân mức là tạm thời".
+- Lời dặn trước khi làm bài không hàm ý nghi ngờ sự trung thực của người làm: "3 lưu ý nhỏ cho câu trả lời chính xác hơn", không "3 điều nhỏ cho câu trả lời thật".
+
+**Khuyến nghị hành động**
+
+- Nói rõ làm gì, bằng công cụ gì, và người làm nhận được gì: "trước khi chuyển sang luồng khác, ghi lại việc mình đang dừng vào sổ tay hoặc tệp ghi chú dễ xem lại, để yên tâm rằng lúc quay lại sẽ nối tiếp được ngay", không chỉ "ghi một dòng về chỗ mình đang dừng".
+- Lợi ích phải là điều người làm thật sự cảm nhận được; mỗi khuyến nghị nói lợi ích của riêng nó, không lặp một công thức cho mọi câu.

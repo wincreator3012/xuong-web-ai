@@ -19,7 +19,7 @@ Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của rep
 ### 2. Tư vấn (chuan/01-tu-van-giai-phap.md)
 
 - Hỏi theo bộ 15 câu, tối đa 4 câu mỗi lượt, có phương án sẵn (AskUserQuestion); bỏ câu đã rõ.
-- Xếp vào loại web (chuan/02-loai-web.md) và bậc hạ tầng 0-3. Đi theo cây quyết định "giải pháp đơn giản nhất": có khi câu trả lời đúng là không cần web, hoặc dùng nền tảng có sẵn.
+- Xếp vào loại web (chuan/02-loai-web.md) và bậc hạ tầng 0-4 (bậc 4: web-app có trí năng nhân tạo, `chuan/10-ung-dung-ai.md`). Đi theo cây quyết định "giải pháp đơn giản nhất": có khi câu trả lời đúng là không cần web, hoặc dùng nền tảng có sẵn.
 - Trình 1-2 phương án: làm được gì, không làm gì, chi phí mỗi năm, việc người dùng phải tự tay làm, rủi ro, phương án khuyên.
 
 ### 3. Tạo dự án và chốt brief (chốt thứ nhất)

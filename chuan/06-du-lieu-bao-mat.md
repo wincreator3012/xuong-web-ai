@@ -5,7 +5,7 @@ Rủi ro lớn nhất của web làm cùng AI không nằm ở giao diện mà �
 ## 1. Năm nguyên tắc
 
 1. **Không thu thì không lộ.** Bậc thấp nhất đủ dùng (chuan/01). Chỉ hỏi những ô thật cần.
-2. **Công khai và bí mật là hai loại khoá khác nhau.** Được để trong trang: cấu hình web Firebase (apiKey Firebase), khoá truy cập Web3Forms, khoá `sb_publishable_` của Supabase, mã đo lường. Không bao giờ để trong trang hay trong kho git: tệp tài khoản dịch vụ (có `"private_key"`), khoá Resend, Stripe, Supabase `sb_secret_`/`service_role`, mã truy cập GitHub, khoá Gemini, OpenAI. Khoá bí mật chỉ sống ở biến môi trường của máy chủ (Cloud Functions, Cloudflare Worker) hoặc trình quản lý mật khẩu.
+2. **Công khai và bí mật là hai loại khoá khác nhau.** Được để trong trang: cấu hình web Firebase (apiKey Firebase), khoá truy cập Web3Forms, khoá `sb_publishable_` của Supabase, mã đo lường. Không bao giờ để trong trang hay trong kho git: tệp tài khoản dịch vụ (có `"private_key"`), khoá Resend, Stripe, Supabase `sb_secret_`/`service_role`, mã truy cập GitHub, khoá Gemini, OpenAI, Anthropic (Claude). Khoá bí mật chỉ sống ở biến môi trường của máy chủ (Cloud Functions, Cloudflare Worker) hoặc trình quản lý mật khẩu.
 3. **Luật trước, giao diện sau.** Với bậc 3, viết luật bảo vệ dữ liệu (Firestore Security Rules, Supabase RLS) trước, giải thích từng dòng bằng lời thường cho người dùng, rồi mới viết giao diện. Giao diện ẩn hiện nút không phải là bảo vệ.
 4. **Trình duyệt là đất của người dùng.** Mọi thứ gửi xuống trình duyệt (mã, dữ liệu, đáp án) người dùng đều xem và sửa được. Điểm thi, giá tiền, quyền quản trị phải được tính, kiểm ở máy chủ.
 5. **Lộ thì xoay.** Khoá đã từng nằm trong kho git, tin nhắn, ảnh chụp màn hình là khoá đã lộ: thu hồi, tạo khoá mới, rồi mới dọn mã (xoá trong lịch sử git không đủ).
@@ -53,6 +53,7 @@ Triển khai [Deploy] > Triển khai mới [New deployment] > Ứng dụng web [
 - **Gửi thư tự động:** qua Cloud Function hoặc tiện ích Trigger Email; khoá dịch vụ thư ở biến môi trường của hàm.
 - **Tên miền được phép đăng nhập:** Firebase Console > Authentication > Settings > Authorized domains, chỉ để tên miền thật.
 - **Trình duyệt nhúng của Zalo, Facebook:** Google chặn đăng nhập; khuôn có lá chắn hướng dẫn mở bằng Chrome, Safari.
+- **Ứng dụng gọi mô hình trí năng nhân tạo** (bậc 4): khóa API chỉ ở Secret Manager, mọi lời gọi mô hình đi qua hàm máy chủ, prompt không bao giờ xuống trình duyệt, luật Firestore cấm mọi lệnh ghi từ trình duyệt: chuan/10.
 - Supabase chỉ khi cần cơ sở dữ liệu quan hệ (SQL) thật: bật RLS cho mọi bảng, không bao giờ để `sb_secret_` trong trình duyệt, nhớ dự án miễn phí tạm dừng sau 7 ngày yên ắng.
 
 ## 4. Thu tiền

@@ -1,6 +1,6 @@
 # Chuẩn nghề của xưởng web
 
-Chín chuẩn chưng cất từ nghiên cứu gốc (`nghien-cuu/`), bài học từ web thật (`docs/BAI-HOC.md`) và chuẩn của xưởng anh em (Xưởng thiết kế Claude). Skill chỉ trỏ tới đây, không chép lại. Sự thật đổi thì sửa thẳng vào đúng chuẩn, ghi ngày.
+Mười chuẩn chưng cất từ nghiên cứu gốc (`nghien-cuu/`), bài học từ web thật (`docs/BAI-HOC.md`) và chuẩn của xưởng anh em (Xưởng thiết kế Claude). Skill chỉ trỏ tới đây, không chép lại. Sự thật đổi thì sửa thẳng vào đúng chuẩn, ghi ngày.
 
 | Chuẩn | Dùng khi |
 |---|---|
@@ -13,4 +13,5 @@ Chín chuẩn chưng cất từ nghiên cứu gốc (`nghien-cuu/`), bài học 
 | `chuan/07-trien-khai.md` | chọn nơi lưu trữ, đưa lên mạng, tên miền, DNS, email, đo lường, bảo trì |
 | `chuan/08-phap-ly-vn.md` | dữ liệu cá nhân, cookie, thương mại điện tử, giấy phép, chân trang, bản quyền, thuế |
 | `chuan/09-nghiem-thu.md` | bốn lớp kiểm trước khi nói "xong" và trước khi đưa lên mạng |
+| `chuan/10-ung-dung-ai.md` | web-app có trí năng nhân tạo (bậc 4): kiến trúc, gọi mô hình, rào chắn, prompt, chi phí, quyền, đưa lên tự động, kiểm thử, đợt thử nghiệm |
 | `chuan/kho-dich-vu.json` | danh bạ dịch vụ: dùng khi nào, hạn mức miễn phí, cần thẻ không, đường dẫn, ngày kiểm |

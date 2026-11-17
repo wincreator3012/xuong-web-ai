@@ -19,6 +19,7 @@ TĨNH (không cần trình duyệt)
   form     ô có nhãn, form thu thông tin cá nhân có ô đồng ý KHÔNG đánh dấu sẵn và liên kết chính sách, có bẫy rác,
            đã khai data-gui, khoá Web3Forms đã dán
   chữ      gạch dài, ba chấm Unicode, nháy cong, Title Case ở tiêu đề và nút, từ cấm và sáo ngữ (chung + phong-cach/tu-ngu.json),
+           kể cả chuỗi chữ Việt trong tệp .js tự viết (chữ của web-app),
            chỗ còn trống [[...]], khung ảnh chờ
   an toàn  khoá bí mật trong mã (tài khoản dịch vụ, khoá Resend, Stripe, GitHub, Supabase secret...), tệp không nên công khai
            nằm trong public/, luật Firestore/Storage lỏng, firebase.json đăng cả thư mục gốc, dữ liệu đáp án gửi xuống trình duyệt
@@ -190,6 +191,30 @@ def kiem_chu(bc, rel, chu, dong=None, la_tieu_de=False):
             bc.goi_y('chu', rel, f'"{m.group(0)[:40]}": {ly_do}', dong)
     if la_tieu_de and C.la_title_case(chu):
         bc.loi('chu', rel, f'Title Case (viết hoa đầu mọi từ): dùng sentence case hoặc FULL-CAP: "{chu[:70]}"', dong)
+
+
+CHU_VIET = re.compile(r'[ăâđêôơưàáạảãằắặẳẵầấậẩẫèéẹẻẽềếệểễìíịỉĩòóọỏõồốộổỗờớợởỡùúụủũừứựửữỳýỵỷỹ]', re.I)
+CHUOI_JS = re.compile(r"'((?:[^'\\\n]|\\.){12,})'|\"((?:[^\"\\\n]|\\.){12,})\"|`((?:[^`\\$]|\\.){12,})`")
+
+
+def kiem_chu_js(bc, web, cong_khai):
+    """Chữ hiển thị của web-app (câu hỏi, lời diễn giải kết quả, thông báo) thường nằm trong chuỗi JS,
+    không nằm trong HTML: quét mọi chuỗi có chữ Việt trong tệp .js tự viết (bỏ .min.js, vendor)."""
+    for dp, dn, fn in os.walk(cong_khai):
+        dn[:] = [x for x in dn if x not in ('node_modules', 'vendor', '_astro')]
+        for f in sorted(fn):
+            if not f.endswith('.js') or f.endswith('.min.js'):
+                continue
+            p = os.path.join(dp, f)
+            rel = os.path.relpath(p, web)
+            for so, dong in enumerate(C.doc(p).splitlines(), 1):
+                s = dong.strip()
+                if s.startswith('//') or s.startswith('*') or s.startswith('/*'):
+                    continue
+                for m in CHUOI_JS.finditer(dong):
+                    chu = next(g for g in m.groups() if g is not None)
+                    if CHU_VIET.search(chu):
+                        kiem_chu(bc, rel, chu.replace("\\'", "'").replace('\\"', '"'), so)
 
 
 def kiem_html(bc, web, cong_khai, p, len_mang):
@@ -614,6 +639,7 @@ def main():
         d = kiem_html(bc, web, cong_khai, p, a.len)
         if os.path.basename(p) != '404.html':
             kiem_chan_trang(bc, os.path.relpath(p, web), d)
+    kiem_chu_js(bc, web, cong_khai)
     kiem_an_toan(bc, web, cong_khai)
     if not os.path.exists(os.path.join(cong_khai, '_headers')) and not os.path.exists(os.path.join(web, 'vercel.json')) and C.ho_so_web(web).get('loai') != 'firebase':
         bc.canh('an-toan', '-', 'chưa có tệp _headers (lớp bảo vệ HTTP): chép từ he-thong/mau-web/_headers')
