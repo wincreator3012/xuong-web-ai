@@ -1,6 +1,6 @@
 ---
 name: web-thiet-ke
-description: "Lõi của xưởng web AI (repo xuong-web-ai): tư vấn nhu cầu, chọn giải pháp đơn giản nhất đủ dùng, lập brief, thiết kế, dựng, kiểm và bàn giao website hoặc web-app cho người dùng và các thương hiệu, đối tác họ làm cùng, theo phong cách và chuẩn ngôn ngữ của chính người dùng (phong-cach/PHONG-CACH.md). Kích hoạt khi người dùng nói làm web, làm website, tạo trang web, landing page cho khoá học, sự kiện, sách, trang báo giá, trang hồ sơ, trang liên kết, web tra cứu, trắc nghiệm online, web-app, sửa web, thêm trang, đổi giao diện web, biến nội dung này thành website, tôi muốn có web nhưng chưa biết bắt đầu từ đâu, kể cả khi người dùng không nhắc tên skill. Việc tài khoản, đưa lên mạng, tên miền, DNS, email dùng web-trien-khai; đăng nhập, dữ liệu, Astro, Firebase, thanh toán dùng thêm web-ung-dung. Không dùng cho việc chỉ viết một bài văn, làm ấn phẩm ảnh, slide."
+description: "Lõi của xưởng web AI (repo xuong-web-ai): tư vấn nhu cầu, chọn giải pháp đơn giản nhất đủ dùng, lập brief, thiết kế, dựng, kiểm và bàn giao website hoặc web-app cho người dùng và các thương hiệu, đối tác họ làm cùng, theo phong cách và chuẩn ngôn ngữ của chính người dùng (phong-cach/PHONG-CACH.md). Kích hoạt khi người dùng nói làm web, làm website, tạo trang web, landing page cho khoá học, sự kiện, sách, trang báo giá, trang hồ sơ, trang liên kết, web tra cứu, trắc nghiệm online, web-app, thiết kế giao diện và trải nghiệm web-app, sửa web, thêm trang, đổi giao diện web, làm lại giao diện theo bản mẫu hay bộ bàn giao thiết kế, biến nội dung này thành website, tôi muốn có web nhưng chưa biết bắt đầu từ đâu, kể cả khi người dùng không nhắc tên skill. Việc tài khoản, đưa lên mạng, tên miền, DNS, email dùng web-trien-khai; đăng nhập, dữ liệu, Astro, Firebase, thanh toán dùng thêm web-ung-dung. Không dùng cho việc chỉ viết một bài văn, làm ấn phẩm ảnh, slide."
 ---
 
 # Xưởng web AI: lõi tư vấn, thiết kế, dựng, kiểm
@@ -30,6 +30,7 @@ Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của rep
 ### 4. Kế hoạch thiết kế (chốt thứ hai)
 
 - Viết `THIET-KE.md` 10-15 dòng theo chuan/03-thiet-ke-web.md mục 2: mood, chủ đề màu, khối tối, phông, bố cục từng phần, chất liệu đặc trưng, một điểm nhớ, những gì cố ý không dùng. Người dùng duyệt.
+- Web-app, công cụ nhiều bước: kế hoạch thêm hành trình, danh sách trạng thái, bố cục theo khổ (chuan/11-giao-dien-trai-nghiem.md mục 1-2). Người dùng đưa bản mẫu hay bộ bàn giao thiết kế (Claude Design, Figma, ảnh chụp): làm theo chuan/11 mục 12, tức đối chiếu với bảng quyết định đã chốt, chia ba nhóm (giao diện thuần, đổi thứ tự trình bày, tính năng mới) trình người dùng quyết, gom câu chữ mới để người dùng duyệt trước khi dựng, hỏi rõ nhận diện của chương trình và đơn vị chủ quản (mục 11).
 
 ### 5. Dựng
 
@@ -42,6 +43,7 @@ Chưa gắn thư mục "Web AI" vào phiên (không thấy `CLAUDE.md` của rep
 
 - `python3 tools/kiem-web.py <tên-web>` tới khi không còn LỖI; cảnh báo nào giữ lại phải có lý do.
 - NHÌN tờ tổng thể và ảnh từng khổ (390, 768, 1280 px), đối chiếu THIET-KE.md và danh sách cấm (chuan/03 mục 9); đọc soát từng âm tiết.
+- Web-app: chụp từng trạng thái ở 390 và 1280 px, cả theme sáng và tối, cả mất mạng và mạng chậm, nhìn theo 10 câu hỏi của chuan/11 mục 10.
 - `python3 tools/anh-chia-se.py <tên-web>` khi nội dung đã chốt.
 
 ### 7. Trình và bàn giao

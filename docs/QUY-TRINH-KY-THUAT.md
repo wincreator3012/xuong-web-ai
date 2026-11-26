@@ -7,8 +7,9 @@ Môi trường, lệnh, bản đồ tài nguyên, cấu trúc web và dự án, 
 | Thứ | Ở đâu | Ghi chú |
 |---|---|---|
 | Tên, chức danh, từ ngữ, tông, liên hệ, sổ góp ý | `phong-cach/PHONG-CACH.md` | mục 1, 4 nguyên văn, khớp hai xưởng anh em |
-| Luật chữ riêng cho máy kiểm | `phong-cach/tu-ngu.json` | luật chung trong `tools/chung.py` |
-| Thương hiệu, chủ đề màu web, nhân vật, liên hệ | `brand/brand.json`, `brand/logo/` | mọi chủ đề qua `tools/tuong-phan.py` |
+| Luật chữ riêng cho máy kiểm | `kho-tu-lieu/ngon-ngu/tu-ngu.json` | luật chung trong `tools/chung.py` |
+| Chủ đề màu web, chủ đề mặc định từng thương hiệu | `brand/brand.json` (lớp riêng của xưởng) | mọi chủ đề qua `tools/tuong-phan.py` |
+| Thương hiệu, logo, nhân vật, liên hệ chân trang | kho tư liệu chung `kho-tu-lieu/thuong-hieu/` (`nhan-dien.json`, `logo/`); `tools/chung.py` > `brand()` trộn kho với lớp riêng | sửa ở kho, chạy `cong-cu/kiem-kho.py` |
 | Chuẩn nghề (tư vấn, loại web, thiết kế, chữ, kỹ thuật, dữ liệu, triển khai, pháp lý, nghiệm thu) | `chuan/01` tới `chuan/09`, `chuan/kho-dich-vu.json` | nguồn gốc ở `nghien-cuu/` |
 | Thẻ hướng dẫn việc người dùng tự làm | `huong-dan/00` tới `huong-dan/12` | cách dẫn: `huong-dan/README.md` |
 | Nền chung mọi web | `he-thong/nen.css`, `he-thong/nen.js` | sửa xong: chuan/09 mục 6 |

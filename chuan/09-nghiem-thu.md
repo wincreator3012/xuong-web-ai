@@ -14,6 +14,7 @@ Kiểm trình duyệt (nơi có Playwright: sandbox đám mây của phiên, ho�
 Máy không thấy được cái đẹp, cái lệch nhịp, cái sai giọng. Trước khi trình:
 - Mở tờ tổng thể và ảnh từng khổ ở cỡ thật; đối chiếu THIET-KE.md và danh sách cấm (chuan/03 mục 9).
 - Đọc soát toàn bộ chữ từng âm tiết; tên, chức danh đúng PHONG-CACH mục 1.
+- Web-app: chụp và nhìn từng trạng thái (lần đầu, đang chờ, lỗi, hết hạn mức, xong, vai có quyền khác) ở 390 và 1280 px, theo 10 câu hỏi của chuan/11 mục 10.
 - Trình người dùng: tờ tổng thể + 3-6 dòng (lựa chọn chính và lý do, cảnh báo còn lại, điều cần người dùng chốt).
 
 ## 3. Người dùng thử

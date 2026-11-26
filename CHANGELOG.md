@@ -2,6 +2,29 @@
 
 Trợ lý AI đọc tệp này khi người dùng nói "cập nhật xưởng": từ phiên bản ghi trong `XUONG.json` của xưởng tới bản mới nhất, để kể bằng lời thường điều gì mới và điều gì sẽ đổi. Mỗi mục ghi: phiên bản (năm.tháng.ngày), thay đổi, việc trợ lý cần làm trong xưởng đã dựng, dữ kiện đã kiểm chứng lại.
 
+## 2026.11.25
+
+Bổ sung chuẩn giao diện và trải nghiệm từ lần học một bộ bàn giao thiết kế.
+
+- **`chuan/11-giao-dien-trai-nghiem.md`**: mục 4 thêm 4 mẫu dùng lại (khung xương khi tải và báo mạng chậm sau 6 giây; băng mất kết nối trong đầu màn; 3 trang lỗi; cách phân biệt lỗi mạng với lỗi máy chủ của Firebase); mục 9 thêm hộp xác nhận nói rõ hệ quả trước việc tiêu hạn mức hay chia sẻ (câu chữ phải khớp mã) và viên chặng nổi; mục 10 thêm kiểm theme tối, mất mạng, mạng chậm; mục 11 mới về bộ token, thẻ không viền, theme tối, nhận diện chương trình và đơn vị chủ quản, phông tự lưu trữ; mục 12 mới về cách nhận bộ bàn giao thiết kế (Claude Design, Figma).
+- **Skill**: `web-thiet-ke` làm theo chuan/11 mục 12 khi nhận bản mẫu hay bộ bàn giao, chụp kiểm cả theme tối và mất mạng; `web-ung-dung` dựng giao diện theo mục 4 và 11.
+- **`docs/BAI-HOC.md`**: thêm 4 bài học về bộ bàn giao thiết kế, nhận diện, kiểm câu chữ với mã, kiểm bằng Playwright.
+
+Việc trợ lý cần làm trong xưởng đã dựng: chép `chuan/11-giao-dien-trai-nghiem.md`, hai skill đã đổi; đóng gói lại `web-thiet-ke` và `web-ung-dung` bằng `python3 tools/dong-goi-skill.py` rồi hướng dẫn người dùng tải lại lên tài khoản AI.
+
+## 2026.11.24
+
+Thêm chuẩn giao diện và trải nghiệm cho web-app, kèm tổng quan tài liệu làm nền.
+
+- **Chuẩn mới `chuan/11-giao-dien-trai-nghiem.md`**: cho web-app, công cụ nhiều bước, trắc nghiệm, ứng dụng có trí năng nhân tạo. Gồm: tinh thần (giao diện phục vụ suy nghĩ của người dùng, không giữ chân họ), hành trình và danh sách trạng thái, bố cục theo khổ màn hình (thanh bên từ 1024 px, khung phụ từ 1280 px, ngăn kéo trên điện thoại), luồng nhiều bước (tiến trình luôn hiện, từng ô một, thu gọn bước đã xong, lưu nháp và nói ra, chỉ bổ sung chứ không sửa đè lời đã gửi khi lời ấy là dữ liệu tư duy), phản hồi và chờ đợi theo ba ngưỡng 0,1, 1, 10 giây, giao diện có trí năng nhân tạo (người dùng nghĩ trước, máy soi sau; giọng máy tách khỏi lời người dùng; mỗi nhận xét kèm căn cứ), ma sát có chủ đích, an lành và an toàn tâm lý, danh sách cấm theo năm chiến lược mẫu lừa, chi tiết thực thi, kiểm.
+- **Báo cáo mới `nghien-cuu/G-giao-dien-trai-nghiem.md`**: tổng quan 22 nguồn theo bảy cụm (khả dụng và thời gian chờ, tải nhận thức, bố cục đáp ứng và điều hướng, tương tác người và trí năng nhân tạo, phản tư và ma sát có chủ đích, động lực và an lành, đạo đức thiết kế), kèm ca thay giao diện một web-app phản tư và các chỗ vấp khi dựng.
+- **Nối vào chuẩn và skill**: `chuan/03`, `chuan/09`, `chuan/10` trỏ sang chuan/11; skill `web-thiet-ke` thêm bước lập hành trình, trạng thái, bố cục cho web-app và tách giao diện khỏi đổi luồng khi nhận bản mẫu; skill `web-ung-dung` dựng giao diện theo chuan/11 và nói rõ ngoại lệ chấm điểm trên trình duyệt chỉ dành cho bài tự đánh giá phản tư; skill `web-trien-khai` nhận thêm lời gọi "đưa lên tự động bằng GitHub Actions". `docs/BAI-HOC.md` thêm mục "Giao diện và trải nghiệm".
+- **Công cụ**: `tools/kho_tu_lieu.py` mới (tìm kho tư liệu dùng chung nếu có, không có thì dùng `brand/` của repo); `tools/chung.py`, `tools/web-moi.py`, `tools/kiem-tai-lieu.py`, `tools/dong-goi-skill.py` cập nhật theo.
+
+Việc trợ lý cần làm trong xưởng đã dựng: chép `chuan/11-giao-dien-trai-nghiem.md`, `nghien-cuu/G-giao-dien-trai-nghiem.md`, các chuẩn và công cụ đã đổi; đóng gói lại hai skill `web-thiet-ke` và `web-ung-dung` bằng `python3 tools/dong-goi-skill.py` rồi hướng dẫn người dùng tải lại lên tài khoản AI.
+
+Dữ kiện đã kiểm chứng lại ngày 24/11/2026: các lớp cửa sổ và bố cục chuẩn của Material Design 3 (Android Developers), số liệu điều hướng ẩn của Nielsen Norman Group (2016), ba ngưỡng thời gian đáp ứng, và thông tin xuất bản của các nghiên cứu Amershi và cộng sự (2019), Buçinca và cộng sự (2021), Lee và cộng sự (2025), Peters, Calvo và Ryan (2018), Chen và cộng sự (2022), Cox và cộng sự (2016), Fleck và Fitzpatrick (2010), Gray và cộng sự (2018), Passi và Vorvoreanu (2022).
+
 ## 2026.11.17
 
 Thêm bậc 4 (web-app có trí năng nhân tạo) và cách soát chữ trong mã của web-app.

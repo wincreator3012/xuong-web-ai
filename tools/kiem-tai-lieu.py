@@ -135,14 +135,24 @@ def main():
     try:
         pb = os.path.join(GOC, 'brand', 'brand.json')
         b = json.load(open(pb if os.path.exists(pb) else os.path.join(GOC, 'brand', 'brand.mau.json'), encoding='utf-8'))
+        thu_muc_logo = os.path.join(GOC, 'brand', 'logo')
+        try:  # xưởng nối kho tư liệu chung: nhận diện, logo ở kho
+            sys.dont_write_bytecode = True
+            sys.path.insert(0, os.path.join(GOC, 'tools'))
+            import kho_tu_lieu
+            if kho_tu_lieu.kho():
+                b = kho_tu_lieu.kho().tron_brand(b)
+                thu_muc_logo = kho_tu_lieu.kho().thu_muc_logo()
+        except ImportError:
+            pass
         if b.get('thuongHieuMacDinh') not in b.get('thuongHieu', {}):
             loi.append('brand/brand.json: thuongHieuMacDinh không trỏ tới thương hiệu có thật')
         for k, th in b.get('thuongHieu', {}).items():
             if th.get('chuDeMacDinh') not in b.get('chuDe', {}):
                 loi.append(f'brand: thuongHieu.{k}.chuDeMacDinh "{th.get("chuDeMacDinh")}" không có trong chuDe')
             for vai, tep in (th.get('logo') or {}).items():
-                if tep and not os.path.exists(os.path.join(GOC, 'brand', 'logo', tep)):
-                    loi.append(f'brand/brand.json: logo {k}.{vai} = "{tep}" không có trong brand/logo/')
+                if tep and not os.path.exists(os.path.join(thu_muc_logo, *tep.split('/'))):
+                    loi.append(f'brand: logo {k}.{vai} = "{tep}" không có trong {thu_muc_logo}')
     except (OSError, ValueError):
         pass
     bang_khuon = doc(os.path.join(GOC, 'khuon', 'README.md')) if os.path.exists(os.path.join(GOC, 'khuon', 'README.md')) else ''

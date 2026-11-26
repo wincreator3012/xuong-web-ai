@@ -2,10 +2,10 @@
  "_huong-dan": "Danh mục tệp của bản vẽ Xưởng web AI. Trợ lý AI dựng xưởng riêng theo DUNG-XUONG.md: tệp \"chep\" ghi lại vào xưởng đúng từng byte (sha256 khớp; .bat lưu CRLF), tệp \"mau\" điền rồi ghi theo \"dich\", tệp \"chi-ban-ve\" không đưa vào xưởng. Lập bằng: python3 tools/ban-dung.py --lap",
  "banVe": "https://github.com/wincreator3012/xuong-web-ai",
  "nguonTho": "https://raw.githubusercontent.com/wincreator3012/xuong-web-ai/main/",
- "phienBan": "2026.11.17",
- "ngayLap": "2026-11-17",
+ "phienBan": "2026.11.25",
+ "ngayLap": "2026-11-24",
  "tong": {
-  "chep": 174,
+  "chep": 177,
   "mau": 3,
   "chi-ban-ve": 10
  },
@@ -37,8 +37,8 @@
   {
    "duong": "CHANGELOG.md",
    "loai": "chi-ban-ve",
-   "sha256": "d613cd3b13a9d285ca9f87c207ffe94b8b695cb89df7dcebfe6a0f6b7d59ad3d",
-   "byte": 7752
+   "sha256": "20faee0d344e6e4f50c96605a7e2eeb707370d8fd665f1ca430d249b00fc161b",
+   "byte": 12562
   },
   {
    "duong": "CLAUDE.md",
@@ -151,14 +151,14 @@
   {
    "duong": "chuan/03-thiet-ke-web.md",
    "loai": "chep",
-   "sha256": "e88f934234f4b1d50da022a051921d591e813cd1381e478469996835ac3656ba",
-   "byte": 10860
+   "sha256": "5be7086ca306140c0c67d6d885353fb425a88ebf0c41f52aa058ee77a6385249",
+   "byte": 11110
   },
   {
    "duong": "chuan/04-ngon-tu-web.md",
    "loai": "chep",
-   "sha256": "9d3a946da4c22cf44f1327deda00b3cd73d9605edfc793b9e4870c311da349dc",
-   "byte": 13302
+   "sha256": "51081436d471c2166d50560424d0e535a20d0659a4b6b5376681f0d1d9cb5c9d",
+   "byte": 13312
   },
   {
    "duong": "chuan/05-ky-thuat.md",
@@ -187,20 +187,26 @@
   {
    "duong": "chuan/09-nghiem-thu.md",
    "loai": "chep",
-   "sha256": "f971d112bd4ff75dd83b3ffd4d97b5f5c8a4a4fa7a542aa4e3f03caa0c823a0a",
-   "byte": 3168
+   "sha256": "780e4dce14b30a56499d3e2b84ba6ff38a086d61b4ae9592298fad57fe445532",
+   "byte": 3365
   },
   {
    "duong": "chuan/10-ung-dung-ai.md",
    "loai": "chep",
-   "sha256": "9d8d50b9e543d8508d27d520299044c5c4e3dae0f6c602345c71f007034bda00",
-   "byte": 15732
+   "sha256": "e6e8e77ed72e8ebe07a8264343e215f5689d69cade95a81d68dfdac081989831",
+   "byte": 15976
+  },
+  {
+   "duong": "chuan/11-giao-dien-trai-nghiem.md",
+   "loai": "chep",
+   "sha256": "cae8e73a6b175f45e5b2df6936f3f25e7f8d05db2ead2ab48a3dd4a7e497d6ec",
+   "byte": 18818
   },
   {
    "duong": "chuan/README.md",
    "loai": "chep",
-   "sha256": "da6c5ac1ee096da1eccaa72b032c6903f2944af5d80c4f18c30263e6a169ed93",
-   "byte": 1890
+   "sha256": "c26006633cd06ece25c1b1203c84effa72d927a2d554450e35eb4bfdf1e5ac49",
+   "byte": 2233
   },
   {
    "duong": "chuan/kho-dich-vu.json",
@@ -211,8 +217,8 @@
   {
    "duong": "docs/BAI-HOC.md",
    "loai": "chep",
-   "sha256": "d25bda73e9d59fabd839bc26992508a799c3e89663e0d17332d890c04292c837",
-   "byte": 12319
+   "sha256": "d9fdcb95630db6090063e30d9f51f889020e88c3b60787f3590ec8c853fee82c",
+   "byte": 16985
   },
   {
    "duong": "docs/DONG-GOP.md",
@@ -223,8 +229,8 @@
   {
    "duong": "docs/QUY-TRINH-KY-THUAT.md",
    "loai": "chep",
-   "sha256": "ad39f1c50476f63fb2c11ae77f4933036714e4e840b26abf1bb01189a1eeade0",
-   "byte": 12255
+   "sha256": "c7e2f35911171fc91a949407341d4a47f3c185eb5789b6dce48945702d6778a4",
+   "byte": 12535
   },
   {
    "duong": "fonts/be-vietnam-pro/OFL.txt",
@@ -968,10 +974,16 @@
    "byte": 7149
   },
   {
+   "duong": "nghien-cuu/G-giao-dien-trai-nghiem.md",
+   "loai": "chep",
+   "sha256": "e6caf0b002e87108308722b203aecb137bc4971c3772abd307fb1ecf4f75b64d",
+   "byte": 20721
+  },
+  {
    "duong": "nghien-cuu/README.md",
    "loai": "chep",
-   "sha256": "87fecebe0643838a82df017c2aebc951c2ba82358766a294ab67b20429b79a13",
-   "byte": 2802
+   "sha256": "ec7b075cdbb65ff3b2afa22d3d26dbe01043cba9d44290c199189c5e7967c2b2",
+   "byte": 3502
   },
   {
    "duong": "phong-cach/PHONG-CACH.mau.md",
@@ -1000,14 +1012,14 @@
   {
    "duong": "skills/web-thiet-ke/SKILL.md",
    "loai": "chep",
-   "sha256": "6e1771560cd5ff7f16caa284238750401f28eec1877e247959e429cea5103408",
-   "byte": 7220
+   "sha256": "8811efe48d9cb93265e8f6837b2a67941b9f3dc1340c1315efdf1e09c77606a6",
+   "byte": 8158
   },
   {
    "duong": "skills/web-thiet-ke/kem.json",
    "loai": "chep",
-   "sha256": "1d8606f3c438a2b2ce299cc391de26bef68c2ee250600814d42c4ef4741614f3",
-   "byte": 575
+   "sha256": "edc28f24515934f65b1daad1571af6e1318cfd09a3b568fe6ca9a919a8e512ba",
+   "byte": 616
   },
   {
    "duong": "skills/web-thiet-lap/SKILL.md",
@@ -1030,8 +1042,8 @@
   {
    "duong": "skills/web-trien-khai/SKILL.md",
    "loai": "chep",
-   "sha256": "b1a76837c7e5c991bb72ee9af2e2f7bf78cc02448755b079b01bad17a6f0b267",
-   "byte": 7664
+   "sha256": "15f4457dd5625fe6ebcb77f023002c372cbe64cb0a68e16b7e44e5f80067ce36",
+   "byte": 7711
   },
   {
    "duong": "skills/web-trien-khai/kem.json",
@@ -1042,14 +1054,14 @@
   {
    "duong": "skills/web-ung-dung/SKILL.md",
    "loai": "chep",
-   "sha256": "f28d0431555def8839e5e8a96aaf022cdcf19c03b846d70f9bff5ca79c8e7f54",
-   "byte": 11322
+   "sha256": "febb0283fc67e864491c509ab777addf9ca2c65546d491ff0158166e2761cc65",
+   "byte": 12165
   },
   {
    "duong": "skills/web-ung-dung/kem.json",
    "loai": "chep",
-   "sha256": "664a3ed264e5c4ac1f8c4eb7589b3c3badd64856ff0e417ac10efc48524792ca",
-   "byte": 585
+   "sha256": "2c1744f0ea50088a1adfc341c64e3603998fbd53c35f100efbc0c754324ec5a2",
+   "byte": 626
   },
   {
    "duong": "tools/anh-chia-se.py",
@@ -1072,20 +1084,26 @@
   {
    "duong": "tools/chung.py",
    "loai": "chep",
-   "sha256": "ab63d1fedafae0a78af9605f7ecee2da15b9348877e5de2ddb04fcccd7987f67",
-   "byte": 10139
+   "sha256": "eee3035b19f6e9c5cac966077ca4538ef6a9b21182bc7d008169f6113554ab46",
+   "byte": 11353
   },
   {
    "duong": "tools/dong-goi-skill.py",
    "loai": "chep",
-   "sha256": "c7fc6dbe1dd4a59fffdfa277757c6e6670938d43a282b2ab01d3bdd1f9fe05b4",
-   "byte": 17924
+   "sha256": "82d5f0d2b7c72321910b9483b0e2230f5e53878532f3a34401e1d06f231c4fd4",
+   "byte": 18006
   },
   {
    "duong": "tools/dua-len.py",
    "loai": "chep",
    "sha256": "7b1ce6b9f47316ae06ee0e215e96d8abfea689bc713844583251dff13b23b2d7",
    "byte": 12078
+  },
+  {
+   "duong": "tools/kho_tu_lieu.py",
+   "loai": "chep",
+   "sha256": "f710129fcbf39a3d14e761db002f7b1c3f38d833d07af4639d9cfa28ec854b66",
+   "byte": 3732
   },
   {
    "duong": "tools/kiem-sach.py",
@@ -1096,8 +1114,8 @@
   {
    "duong": "tools/kiem-tai-lieu.py",
    "loai": "chep",
-   "sha256": "181f3e06a5b3bd65c79dfd975f5ced288b3ed672a31204d346c6cf1503958e82",
-   "byte": 8791
+   "sha256": "943168ef79888b27e90cf4baa72911427fe06690d99e12f330c75f716f365730",
+   "byte": 9254
   },
   {
    "duong": "tools/kiem-web.py",
@@ -1126,8 +1144,8 @@
   {
    "duong": "tools/web-moi.py",
    "loai": "chep",
-   "sha256": "5f1a2786d8a187dcbb5eb67d2a0a1f0467eeb8c5bdc6b43f686621a805f1bc2f",
-   "byte": 13183
+   "sha256": "a1efaa2639e05fae53aed6abdd6a6f8aa9d735d6eb9e94ebb1be331da6f457bf",
+   "byte": 13188
   },
   {
    "duong": "tools/xem.py",

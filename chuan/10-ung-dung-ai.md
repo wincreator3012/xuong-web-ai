@@ -106,6 +106,7 @@ Lời gọi nhiều phút (bảng phân tích từ nhiều lượt): hàm gọi 
 
 ## 14. Làm việc cùng chủ dự án
 
+- Giao diện và trải nghiệm theo chuan/11, nhất là mục 5: người dùng nghĩ trước, máy soi sau; giọng máy tách khỏi lời người dùng; mỗi nhận xét kèm căn cứ; chờ trên 10 giây thì nói thời lượng.
 - Mọi chữ hiển thị (giao diện, lời nhắn lỗi phía máy chủ, lời chào, câu hỏi) qua cổng soát chữ của chuan/04 và `tools/kiem-web.py` trước khi gửi chủ dự án duyệt; lời mời, lời chào dễ mang giọng văn máy nhất, đọc to lại.
 - Mỗi lần đưa lên: đồng bộ các tệp đã đổi về thư mục dự án trên máy của chủ dự án, cập nhật `VAN-HANH.md` của dự án.
 - Chủ dự án tự bấm những việc gắn với danh tính và quyền: đồng ý điều khoản, cấp quyền OAuth, nhập khóa vào Secret Manager, chấp nhận lời mời chủ dự án.

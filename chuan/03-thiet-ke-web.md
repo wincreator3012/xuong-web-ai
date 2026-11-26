@@ -1,6 +1,6 @@
 # 03. Thiết kế web
 
-Chuẩn thiết kế chung cho mọi web của xưởng. Màu, phông cụ thể của từng thương hiệu nằm ở `brand/brand.json` > `chuDe` (đã kiểm tương phản bằng `tools/tuong-phan.py`); lớp giao diện dùng chung nằm ở `he-thong/nen.css`. Tài liệu này nói cách nghĩ và các bất biến.
+Chuẩn thiết kế chung cho mọi web của xưởng. Màu, phông cụ thể của từng thương hiệu nằm ở `brand/brand.json` > `chuDe` (đã kiểm tương phản bằng `tools/tuong-phan.py`); lớp giao diện dùng chung nằm ở `he-thong/nen.css`. Tài liệu này nói cách nghĩ và các bất biến. Web-app và công cụ nhiều bước dùng thêm chuan/11 (hành trình và trạng thái, bố cục theo khổ, luồng nhiều bước, giao diện có trí năng nhân tạo, danh sách cấm mẫu lừa).
 
 
 ## 1. Năm nguyên tắc bất biến
@@ -94,6 +94,6 @@ Trước khi dựng, Claude viết `THIET-KE.md` 10-15 dòng cho người dùng 
 | Báo giá, dịch vụ cho tổ chức | tin cậy | `cauTruc` làm chủ (tiêu đề phụ, bảng giá, số liệu); khối tối ở mở đầu; không vàng kim |
 | Trang đích sản phẩm tri thức | ấm và mời gọi | nhấn làm chủ; nền phụ cho khối trích đoạn; một khối tối duy nhất ở lời mời cuối |
 | Hồ sơ cá nhân | chiêm nghiệm | mở đầu hoặc chân trang nền tối với trích dẫn màu `vang`; thân trang sáng |
-| Công cụ, tra cứu, ứng dụng | trung tính | gần như đơn sắc; nhấn chỉ cho trạng thái tương tác; không khối tối, không mở đầu lớn |
+| Công cụ, tra cứu, ứng dụng | trung tính | gần như đơn sắc; nhấn chỉ cho trạng thái tương tác; không khối tối, không mở đầu lớn; bố cục và luồng theo chuan/11 |
 
 Nếu Claude tự chọn mood, bố cục thay người dùng: ghi lý do vào THIET-KE.md và nói khi trình.

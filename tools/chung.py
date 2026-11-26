@@ -20,6 +20,9 @@ for _luong in (sys.stdout, sys.stderr):  # Windows: cửa sổ lệnh, ống d�
         pass
 TOOLS = os.path.dirname(os.path.abspath(__file__))
 GOC = os.path.dirname(TOOLS)
+if TOOLS not in sys.path:
+    sys.path.insert(0, TOOLS)
+import kho_tu_lieu  # noqa: E402  kho tư liệu chung (logo, nhận diện, luật chữ); không có thì dùng brand/ của repo
 DUOI_VAN_BAN = {'.html', '.htm', '.css', '.js', '.mjs', '.json', '.jsonc', '.md', '.txt', '.xml', '.toml', '.yml',
                 '.yaml', '.astro', '.ts', '.rules', '.svg', ''}
 
@@ -140,11 +143,25 @@ def tim_du_an(web):
 
 # ---------------------------------------------------------------- thương hiệu, chủ đề màu
 def brand():
+    """Hồ sơ thương hiệu đầy đủ. Có kho tư liệu chung: nhận diện của kho (thương hiệu, logo, nhân vật, liên hệ)
+    trộn với brand/brand.json của xưởng (chủ đề màu web, chủ đề mặc định từng thương hiệu). Không có kho: brand.json."""
     for ten in ('brand.json', 'brand.mau.json'):
         p = os.path.join(GOC, 'brand', ten)
         if os.path.exists(p):
-            return doc_json(p)
+            k = kho_tu_lieu.kho()
+            return k.tron_brand(doc_json(p)) if k else doc_json(p)
     raise SystemExit('Thiếu brand/brand.json: chạy bước thiết lập trước.')
+
+
+def thu_muc_logo():
+    """Thư mục logo: thuong-hieu/logo/ của kho tư liệu, không có kho thì brand/logo/ của repo."""
+    k = kho_tu_lieu.kho()
+    return k.thu_muc_logo() if k else os.path.join(GOC, 'brand', 'logo')
+
+
+def tep_logo(ten):
+    """Đường dẫn tuyệt đối của một logo khai trong brand (tên có thể chứa thư mục con)."""
+    return os.path.join(thu_muc_logo(), *ten.split('/'))
 
 
 def kebab(k):
@@ -198,12 +215,17 @@ TU_NEN_TRANH_CHUNG = [
 
 @functools.lru_cache(None)
 def tu_ngu_rieng():
-    p = os.path.join(GOC, 'phong-cach', 'tu-ngu.json')
-    if not os.path.exists(p):
-        p = os.path.join(GOC, 'phong-cach', 'tu-ngu.mau.json')
-    if not os.path.exists(p):
-        return [], []
-    d = doc_json(p)
+    """Luật chữ riêng: ngon-ngu/tu-ngu.json của kho tư liệu; không có kho thì phong-cach/tu-ngu.json (hoặc bản mẫu)."""
+    k = kho_tu_lieu.kho()
+    if k:
+        d = k.tu_ngu()
+    else:
+        p = os.path.join(GOC, 'phong-cach', 'tu-ngu.json')
+        if not os.path.exists(p):
+            p = os.path.join(GOC, 'phong-cach', 'tu-ngu.mau.json')
+        if not os.path.exists(p):
+            return [], []
+        d = doc_json(p)
 
     def lay(k):
         return [('(?i)' + m['mau'], m.get('lyDo', '')) for m in d.get(k, []) if isinstance(m, dict) and m.get('mau')]

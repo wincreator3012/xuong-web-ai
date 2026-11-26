@@ -192,10 +192,9 @@ def tao(a):
         if not os.path.exists(dich):
             shutil.copy(os.path.join(HT, 'trang-chung', tep), dich)
     bang, logo = bang_thay(b, th_key, chu_de, a.ten, a.ten_mien, web_slug)
-    lg = os.path.join(C.GOC, 'brand', 'logo')
     for vai, ten in (('nenSang', 'logo-sang.png'), ('nenToi', 'logo-toi.png'), ('bieuTuongSang', 'bieu-tuong.png')):
-        if logo.get(vai) and os.path.exists(os.path.join(lg, logo[vai])):
-            chep_logo(os.path.join(lg, logo[vai]), os.path.join(tai_nguyen, 'img', ten), 512 if vai == 'bieuTuongSang' else 192)
+        if logo.get(vai) and os.path.exists(C.tep_logo(logo[vai])):  # logo ở kho tư liệu chung (không có kho: brand/logo/)
+            chep_logo(C.tep_logo(logo[vai]), os.path.join(tai_nguyen, 'img', ten), 512 if vai == 'bieuTuongSang' else 192)
     if not os.path.exists(os.path.join(tai_nguyen, 'img', 'bieu-tuong.png')) and os.path.exists(os.path.join(tai_nguyen, 'img', 'logo-sang.png')):
         shutil.copy(os.path.join(tai_nguyen, 'img', 'logo-sang.png'), os.path.join(tai_nguyen, 'img', 'bieu-tuong.png'))
     if k.get('loai') == 'astro':  # Astro: trang dùng đường dẫn tuyệt đối /assets/...

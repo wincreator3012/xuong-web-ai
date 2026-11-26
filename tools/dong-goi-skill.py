@@ -131,6 +131,8 @@ def khoi_cau_hinh():
     ten, th, xh_xem = '', '', ''
     try:
         b = C.doc_json(os.path.join(GOC, 'brand', 'brand.json'))
+        if C.kho_tu_lieu.kho():
+            b = C.kho_tu_lieu.kho().tron_brand(b)
         nv = (b.get('nhanVat') or {}).get('chinh') or {}
         ten = gia_tri_that(nv.get('tenDayDu')) or gia_tri_that(nv.get('ten'))
         th = gia_tri_that(((b.get('thuongHieu') or {}).get(b.get('thuongHieuMacDinh')) or {}).get('ten'))

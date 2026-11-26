@@ -1,6 +1,6 @@
 # 04. Ngôn từ web
 
-Chữ trên web là phần người đọc gặp trước tiên và nhớ lâu nhất. Chuẩn này gồm ba lớp: quy ước nền (bất biến), khung chống văn AI cho tiếng Việt rút gọn cho web, và quy tắc riêng từng vùng trang. Tên, chức danh, từ ngữ phải viết đúng của người dùng nằm ở `phong-cach/PHONG-CACH.md` mục 1 và 4; từ cấm máy tự bắt nằm ở `phong-cach/tu-ngu.json` (cùng luật chung trong `tools/chung.py`).
+Chữ trên web là phần người đọc gặp trước tiên và nhớ lâu nhất. Chuẩn này gồm ba lớp: quy ước nền (bất biến), khung chống văn AI cho tiếng Việt rút gọn cho web, và quy tắc riêng từng vùng trang. Tên, chức danh, từ ngữ phải viết đúng của người dùng nằm ở `phong-cach/PHONG-CACH.md` mục 1 và 4; từ cấm máy tự bắt nằm ở `kho-tu-lieu/ngon-ngu/tu-ngu.json` (cùng luật chung trong `tools/chung.py`).
 
 
 ## 1. Quy ước nền (bất biến)
